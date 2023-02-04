@@ -1,0 +1,19 @@
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+
+  &__search {
+    height: 2rem;
+    padding: 0.5rem;
+  }
+
+  &__results {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__lyrics {
+    font-weight: bold;
+    white-space: pre;
+  }
+}
