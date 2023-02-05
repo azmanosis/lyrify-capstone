@@ -1,6 +1,11 @@
+@use "../../styles/partials/index" as *;
+
 .dashboard {
   display: flex;
   justify-content: space-between;
+  background-color: $back;
+  height: 100vh;
+  width: 100vw;
 
   &__search {
     height: 2rem;
@@ -15,5 +20,7 @@
   &__lyrics {
     font-weight: bold;
     white-space: pre;
+    color: $text;
+    height: 50vh;
   }
 }
