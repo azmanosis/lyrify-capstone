@@ -3,7 +3,7 @@
 .dashboard {
   display: flex;
   justify-content: space-between;
-  background-color: $back;
+  background-color: $darkblue;
   height: 100vh;
   width: 100vw;
 
@@ -20,7 +20,7 @@
   &__lyrics {
     font-weight: bold;
     white-space: pre;
-    color: $text;
+    color: $olive;
     height: 50vh;
   }
 }
