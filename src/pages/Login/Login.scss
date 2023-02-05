@@ -1,7 +1,121 @@
+@use "../../styles/partials/index" as *;
+
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
-  // width: 12rem;
   height: 100vh;
+  background-color: $back;
+
+  &__url {
+    color: $white;
+    text-decoration: none;
+
+    &:hover {
+      color: $text;
+    }
+  }
 }
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+
+// body {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   min-height: 100vh;
+//   background: #252839;
+// }
+
+// ul {
+//   position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   // gap: 30px;
+// }
+
+// ul li {
+//   position: relative;
+//   list-style: none;
+//   color: $text;
+// }
+
+// ul li a {
+//   position: relative;
+//   font-size: 3rem;
+//   text-decoration: none;
+//   line-height: 1rem;
+//   letter-spacing: 2px;
+//   text-transform: uppercase;
+//   color: transparent;
+//   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+// }
+
+// ul li a::before {
+//   content: attr(data-text);
+//   position: absolute;
+//   // bottom: 0.7rem;
+//   color: $text;
+//   // height: fit-content;
+//   // width: 0;
+//   overflow: hidden;
+//   transition: 1s;
+//   border-right: 8px solid $text;
+//   -webkit-text-stroke: 1px $text;
+// }
+
+// ul li a:hover::before {
+//   width: 100%;
+//   filter: drop-shadow(0 0 25px $text);
+// }
+
+// .login {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   min-height: 100vh;
+//   background: #252839;
+
+//   &__ul {
+//     position: relative;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 30px;
+
+//     &--li {
+//       position: relative;
+//       list-style: none;
+//       --clr: #00ade1;
+
+//       &--a {
+//         position: relative;
+//         font-size: 3rem;
+//         text-decoration: none;
+//         line-height: 1rem;
+//         letter-spacing: 2px;
+//         text-transform: uppercase;
+//         color: transparent;
+//         -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+
+//         &::before {
+//           content: attr(data-text);
+//           position: absolute;
+//           color: var(--clr);
+//           width: 0;
+//           overflow: hidden;
+//           transition: 1s;
+//           border-right: 8px solid var(--clr);
+//           -webkit-text-stroke: 1px var(--clr);
+//         }
+
+//         &:hover ::before {
+//           width: 100%;
+//           filter: drop-shadow(0 0 25px var(--clr));
+//         }
+//       }
+//     }
+//   }
+// }
