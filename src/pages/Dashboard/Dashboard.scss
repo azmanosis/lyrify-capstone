@@ -28,5 +28,6 @@
     color: $olive;
     height: 50vh;
     overflow: scroll;
+    @include nomargin_nopadding;
   }
 }
