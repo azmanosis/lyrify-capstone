@@ -6,8 +6,8 @@ const AUTH_URL = "https://accounts.spotify.com/authorize?client_id=b7a11319b71d4
 function Login() {
     return (
         <>
-            <div>
-                <a href={AUTH_URL} data-text="Login With Spotify">Login With Spotify</a>
+            <div className="login">
+                <a className="login__url" href={AUTH_URL}>Login With Spotify</a>
             </div >
         </>
     )

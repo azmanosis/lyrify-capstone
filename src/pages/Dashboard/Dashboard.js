@@ -72,18 +72,20 @@ function Dashboard({ code }) {
 
     return (
         <div className="dashboard">
+            <div>
+                <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
+            </div>
             <Form.Control className="dashboard__search" type="search" placeholder="Search Songs/Artists" value={search} onChange={e => setSearch(e.target.value)} />
 
             <div className="dashboard__results">{searchResults.map(track => (<Search track={track} key={track.uri} chooseTrack={chooseTrack} />
-            ))}
+            ))}</div>
+
+            <div>
                 {searchResults.length === 0 && (
                     <div className='dashboard__lyrics'>
                         {lyrics}
                     </div>
                 )}
-            </div>
-            <div>
-                <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
             </div>
         </div>
     )
