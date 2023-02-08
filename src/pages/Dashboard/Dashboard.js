@@ -6,6 +6,7 @@ import Player from '../../components/Player/Player';
 import { Form } from 'react-bootstrap';
 import SpotifyWebApi from 'spotify-web-api-node';
 import axios from 'axios';
+import Triangle from "../../assets/icons/triangle.svg";
 
 const spotifyApi = new SpotifyWebApi({
     clientId: "b7a11319b71d4c9fb5ea10737cace61f"
@@ -71,15 +72,22 @@ function Dashboard({ code }) {
     }, [search, accessToken])
 
     return (
-        <div className="dashboard">
-            <div>
-                <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
+        <>
+            <div className="header">
+                <img className="header__icon" src={Triangle} alt="logo"></img>
+                <h1 className="header__text">Lyrify</h1>
             </div>
-            <Form.Control className="dashboard__search" type="search" placeholder="Search Songs/Artists" value={search} onChange={e => setSearch(e.target.value)} />
-
-            <div className="dashboard__results">{searchResults.map(track => (<Search track={track} key={track.uri} chooseTrack={chooseTrack} />
-            ))}</div>
-
+            <div className="dashboard">
+                <div className="dashboard__player">
+                    <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
+                </div>
+                <div className="dashboard__search">
+                    <Form.Control className="dashboard__search--songs" type="search" placeholder="Search Songs/Artists" value={search} onChange={e => setSearch(e.target.value)} />
+                    <div className="dashboard__search--results">{searchResults.map(track => (<Search track={track} key={track.uri} chooseTrack={chooseTrack} />
+                    ))}
+                    </div>
+                </div>
+            </div>
             <div>
                 {searchResults.length === 0 && (
                     <div className='dashboard__lyrics'>
@@ -87,7 +95,7 @@ function Dashboard({ code }) {
                     </div>
                 )}
             </div>
-        </div>
+        </>
     )
 }
 
