@@ -55,14 +55,34 @@ body {
   }
 
   &__search {
-    margin-left: 2rem;
+    margin-left: 15rem;
 
     &--songs {
-      height: 2rem;
-      padding: 0.5rem;
-      border-radius: 4px;
-      border-width: 2px;
+      height: 5rem;
+      padding: 2rem;
+      border-radius: 1rem;
+      border-width: 0.5rem;
       border-color: $white;
+      border-image: none;
+      background-color: $darkblue;
+      border-style: solid;
+      display: inline;
+      text-align: center;
+      color: $olive;
+      outline: none;
+      font-family: amedium;
+      font-size: x-large;
+      appearance: none;
+
+      ::placeholder {
+        text-align: center;
+        color: $white;
+      }
+    }
+
+    &--microphone {
+      height: 3rem;
+      filter: invert(100%);
     }
 
     &--results {
