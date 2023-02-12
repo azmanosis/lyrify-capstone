@@ -13,6 +13,7 @@ body {
 }
 
 ::-webkit-scrollbar-button {
+  display: none;
 }
 
 ::-webkit-scrollbar-corner {
@@ -77,11 +78,18 @@ body {
   }
 
   &__lyrics {
+    font-family: abold;
+    font-size: medium;
+    // line-height: 7rem;
+    display: flex;
+    justify-content: center;
     font-weight: bold;
+    text-align: center;
     white-space: pre;
     color: $olive;
-    height: 50vh;
-    overflow: scroll;
+    height: 25vh;
+    overflow-x: scroll;
+    overflow-y: scroll;
     @include nomargin_nopadding;
   }
 }

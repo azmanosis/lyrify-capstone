@@ -1,11 +1,11 @@
 import "./Dashboard.scss";
 import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Form } from 'react-bootstrap';
 import useAuth from '../../components/Auth/useAuth';
 import Search from '../../components/Search/Search';
 import Player from '../../components/Player/Player';
-import { Form } from 'react-bootstrap';
 import SpotifyWebApi from 'spotify-web-api-node';
-import axios from 'axios';
 import Triangle from "../../assets/icons/triangle.svg";
 
 const spotifyApi = new SpotifyWebApi({
@@ -82,6 +82,9 @@ function Dashboard({ code }) {
                     <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
                 </div>
                 <div className="dashboard__search">
+                    {/* <form>
+                        <input className="dashboard__search--songs" type="search" placeholder="Search Songs/Artists" value={search} onChange={(e) => setSearch(e.target.value)} />
+                    </form> */}
                     <Form.Control className="dashboard__search--songs" type="search" placeholder="Search Songs/Artists" value={search} onChange={e => setSearch(e.target.value)} />
                     <div className="dashboard__search--results">{searchResults.map(track => (<Search track={track} key={track.uri} chooseTrack={chooseTrack} />
                     ))}
