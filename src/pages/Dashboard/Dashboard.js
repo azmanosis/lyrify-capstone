@@ -126,9 +126,6 @@ function Dashboard({ code }) {
                         <input className="dashboard__search--songs" type="search" placeholder="Search Songs/Artists" value={search} onChange={(e) => setSearch(e.target.value)} />
                         <img src={microPhoneIcon} className="dashboard__search--microphone" alt=""></img>
                     </form>
-                    <div>
-                        {/* <Form.Control className="dashboard__search--songs" type="search" placeholder="Search Songs/Artists" value={search} onChange={e => setSearch(e.target.value)}></Form.Control> */}
-                    </div>
                     <div className="dashboard__search--results">{searchResults.map(track => (<Search track={track} key={track.uri} chooseTrack={chooseTrack} />
                     ))}
                         {/* {transcript && (
