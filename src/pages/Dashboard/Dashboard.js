@@ -136,6 +136,8 @@ function Dashboard({ code }) {
                     </div>
                 </div>
             </div>
+            <div className="dashboard__line"></div>
+            <div className="dashboard__line"></div>
             <div>
                 {searchResults.length === 0 && (
                     <div className='dashboard__lyrics'>
