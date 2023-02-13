@@ -1,9 +1,8 @@
 import './Dashboard.scss';
-import { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 // import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import SpotifyWebApi from 'spotify-web-api-node';
 import axios from 'axios';
-// import { Form } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 import useAuth from '../../components/Auth/useAuth';
 import Search from '../../components/Search/Search';
@@ -77,63 +76,55 @@ function Dashboard({ code }) {
         return () => cancel = true
     }, [search, accessToken])
 
-    // if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
-    //     return (
-    //         <div className="">Your Browser Does Not Support Speech Recognition.</div>
-    //     );
-    // }
-
-    // const handleListing = () => {
-    //     setIsListening(true);
-    //     microphoneRef.current.classList.add("listening");
-    //     SpeechRecognition.startListening({
-    //         continuous: true,
-    //     });
-    // };
-    // const stopHandle = () => {
-    //     setIsListening(false);
-    //     microphoneRef.current.classList.remove("listening");
-    //     SpeechRecognition.stopListening();
-    // };
-    // const handleReset = () => {
-    //     stopHandle();
-    //     resetTranscript();
-    // };
+    const handleSpeech = () => {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.interimResults = false;
+        recognition.lang = 'en-US';
+        recognition.start();
+        recognition.addEventListener('result', (event) => {
+            setSearch(event.results[0][0].transcript);
+            recognition.stop();
+        });
+    };
 
     return (
         <>
-            {/* <div ref={microphoneRef} onClick={handleListing}>
-                <img src={microPhoneIcon} />
-            </div>
-            <div>
-                {isListening ? "Listening....." : "Click to start Listening"}
-            </div>
-            {isListening && (
-                <button onClick={stopHandle}></button>
-            )} */}
             <div className="header">
-                {/* <Link> */}
-                <img className="header__icon" src={Triangle} alt="logo"></img>
+                {/* <Link to="/"> */}
+                <img
+                    className="header__icon"
+                    src={Triangle} alt="logo">
+                </img>
                 <h1 className="header__text">Lyrify</h1>
                 {/* </Link> */}
             </div>
             <div className="dashboard">
                 <div className="dashboard__player">
-                    <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
+                    <Player
+                        accessToken={accessToken}
+                        trackUri={playingTrack?.uri}
+                    />
                 </div>
                 <div className="dashboard__search">
-                    <form>
-                        <input className="dashboard__search--songs" type="search" placeholder="Search Songs/Artists" value={search} onChange={(e) => setSearch(e.target.value)} />
-                        <img src={microPhoneIcon} className="dashboard__search--microphone" alt=""></img>
-                    </form>
-                    <div className="dashboard__search--results">{searchResults.map(track => (<Search track={track} key={track.uri} chooseTrack={chooseTrack} />
-                    ))}
-                        {/* {transcript && (
-                        <div>
-                            <div>{transcript}</div>
-                            <button onClick={handleReset}>Reset</button>
-                        </div>
-                    )} */}
+                    <input
+                        className="dashboard__search--songs"
+                        type="text"
+                        placeholder="Search Songs/Artists"
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        src={microPhoneIcon}
+                    />
+                    <button onClick={handleSpeech}>
+                        <img
+                            src={microPhoneIcon}
+                            className="dashboard__search--microphone"
+                            alt="">
+                        </img>
+                    </button>
+                    <div
+                        className="dashboard__search--results">
+                        {searchResults.map(track => (<Search track={track} key={track.uri} chooseTrack={chooseTrack} />
+                        ))}
                     </div>
                 </div>
             </div>
