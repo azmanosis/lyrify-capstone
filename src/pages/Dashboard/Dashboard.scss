@@ -82,7 +82,8 @@ body {
 
     &--microphone {
       height: 3rem;
-      filter: invert(100%);
+      background-color: $darkblue;
+      border: solid 1px $white;
     }
 
     &--results {
@@ -112,4 +113,9 @@ body {
     overflow-y: scroll;
     @include nomargin_nopadding;
   }
+}
+
+#image {
+  height: 2rem;
+  background-color: $darkblue;
 }

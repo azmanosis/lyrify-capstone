@@ -114,10 +114,10 @@ function Dashboard({ code }) {
                         onChange={(e) => setSearch(e.target.value)}
                         src={microPhoneIcon}
                     />
-                    <button onClick={handleSpeech}>
+                    <button onClick={handleSpeech} className="dashboard__search--microphone">
                         <img
                             src={microPhoneIcon}
-                            className="dashboard__search--microphone"
+                            id="image"
                             alt="">
                         </img>
                     </button>
