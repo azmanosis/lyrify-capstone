@@ -7,9 +7,10 @@ import axios from 'axios';
 import useAuth from '../../components/Auth/useAuth';
 import Search from '../../components/Search/Search';
 import Player from '../../components/Player/Player';
-import Path1 from '../../assets/icons/Logo/Path_1.svg';
-import Path2 from '../../assets/icons/Logo/Path_2.svg';
-import Path3 from '../../assets/icons/Logo/Path_3.svg';
+import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
+// import Path1 from '../../assets/icons/Logo/Path_1.svg';
+// import Path2 from '../../assets/icons/Logo/Path_2.svg';
+// import Path3 from '../../assets/icons/Logo/Path_3.svg';
 // import Triangle from '../../assets/icons/triangle.svg';
 import microPhoneIcon from '../../assets/icons/microphone.svg';
 
@@ -99,9 +100,11 @@ function Dashboard({ code }) {
                     src={Triangle} alt="logo">
                 </img> */}
                 <div className="header__logo">
-                    <img className="header__logo--path1" src={Path1} alt="logo"></img>
-                    <img className="header__logo--path2" src={Path2} alt="logo"></img>
-                    <img className="header__logo--path3" src={Path3} alt="logo"></img>
+                    <Logo />
+                    {/* <img className="header__logo--path1" src={Path1} alt="logo"></img> */}
+                    {/* <img className="header__logo--path2" src={Path2} alt="logo"></img> */}
+                    {/* <img className="header__logo--path3" src={Path3} alt="logo"></img> */}
+                    {/* <img className="header__logo--individual" src={Logo} alt="logo"></img> */}
                 </div>
                 <h1 className="header__text">Lyrify</h1>
                 {/* </Link> */}
