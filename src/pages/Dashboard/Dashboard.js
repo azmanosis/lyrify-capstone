@@ -45,6 +45,13 @@ function Dashboard({ code }) {
         }).then(res => {
             setLyrics(res.data.lyrics)
         })
+
+        // axios.put('http://localhost:8080/lyricsk', {
+        //     params: {
+        //         track: playingTrack.title,
+        //         artist: playingTrack.artist
+        //     }
+        // });
     }, [playingTrack])
 
     useEffect(() => {
