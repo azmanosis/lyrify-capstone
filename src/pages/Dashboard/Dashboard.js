@@ -22,7 +22,9 @@ function Dashboard({ code }) {
     const [lyrics, setLyrics] = useState("")
     const [translation, setTranslation] = useState("")
     const [showOriginalLyrics, setShowOriginalLyrics] = useState(true)
+    const [showOriginalLyricsButton, setShowOriginalLyricsButton] = useState("show original")
     const [showIndividual, setShowIndividual] = useState(true)
+    const [buttonText, setButtonText] = useState("show individual")
     const originalRef = useRef(null);
     const translationRef = useRef(null);
 
@@ -100,6 +102,11 @@ function Dashboard({ code }) {
 
     const handleClick = () => {
         setShowOriginalLyrics(!showOriginalLyrics);
+        if (showOriginalLyricsButton === "show original") {
+            setShowOriginalLyricsButton("show translated");
+        } else {
+            setShowOriginalLyricsButton("show original");
+        }
     }
 
     const handleScrollOriginal = () => {
@@ -112,6 +119,11 @@ function Dashboard({ code }) {
 
     const handleIndividualClick = () => {
         setShowIndividual(!showIndividual);
+        if (buttonText === "show individual") {
+            setButtonText("show side by side");
+        } else {
+            setButtonText("show individual");
+        }
     }
 
     return (
@@ -123,33 +135,35 @@ function Dashboard({ code }) {
                 {/* </Link> */}
             </div>
             <div className="dashboard">
+                <div className="dashboard__container">
+                    <div className="dashboard__container--search">
+                        <input
+                            className="dashboard__container--search--input"
+                            type="text"
+                            placeholder="Search Songs/Artists"
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                            src={microPhoneIcon}
+                        />
+                        <button onClick={handleSpeech} className="dashboard__container--search--microphonebox">
+                            <img
+                                src={microPhoneIcon}
+                                className="dashboard__container--search--microphonebox--microphoneimage"
+                                alt="">
+                            </img>
+                        </button>
+                    </div>
+                    <div
+                        className="dashboard__container--results">
+                        {searchResults.map(track => (<Search track={track} key={track.uri} chooseTrack={chooseTrack} />
+                        ))}
+                    </div>
+                </div>
                 <div className="dashboard__player">
                     <Player
                         accessToken={accessToken}
                         trackUri={playingTrack?.uri}
                     />
-                </div>
-                <div className="dashboard__search">
-                    <input
-                        className="dashboard__search--songs"
-                        type="text"
-                        placeholder="Search Songs/Artists"
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        src={microPhoneIcon}
-                    />
-                    <button onClick={handleSpeech} className="dashboard__search--microphonebox">
-                        <img
-                            src={microPhoneIcon}
-                            className="dashboard__search--microphoneimage"
-                            alt="">
-                        </img>
-                    </button>
-                    <div
-                        className="dashboard__search--results">
-                        {searchResults.map(track => (<Search track={track} key={track.uri} chooseTrack={chooseTrack} />
-                        ))}
-                    </div>
                 </div>
             </div>
             <div className="dashboard__line"></div>
@@ -194,11 +208,11 @@ function Dashboard({ code }) {
                             </div>
                         }
                         <div>
-                            <button onClick={handleClick}>Show Translated</button>
+                            <button onClick={handleClick}>{showOriginalLyricsButton}</button>
                         </div>
                     </div>
                 }
-                <button onClick={handleIndividualClick}>Show Both</button>
+                <button onClick={handleIndividualClick}>{buttonText}</button>
             </div>
         </>
     )
