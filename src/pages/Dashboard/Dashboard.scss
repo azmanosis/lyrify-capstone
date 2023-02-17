@@ -1,6 +1,8 @@
 @use "../../styles/partials/index" as *;
 
 body {
+  display: flex;
+  align-items: normal;
   background-color: $darkblue;
   @include nomargin_nopadding;
 }
