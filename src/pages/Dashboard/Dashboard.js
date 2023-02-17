@@ -1,5 +1,5 @@
 import './Dashboard.scss';
-import { useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 // import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import SpotifyWebApi from 'spotify-web-api-node';
 import axios from 'axios';
@@ -8,10 +8,6 @@ import useAuth from '../../components/Auth/useAuth';
 import Search from '../../components/Search/Search';
 import Player from '../../components/Player/Player';
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
-// import Path1 from '../../assets/icons/Logo/Path_1.svg';
-// import Path2 from '../../assets/icons/Logo/Path_2.svg';
-// import Path3 from '../../assets/icons/Logo/Path_3.svg';
-// import Triangle from '../../assets/icons/triangle.svg';
 import microPhoneIcon from '../../assets/icons/microphone.svg';
 
 const spotifyApi = new SpotifyWebApi({
@@ -24,14 +20,17 @@ function Dashboard({ code }) {
     const [searchResults, setSearchResults] = useState([])
     const [playingTrack, setPlayingTrack] = useState()
     const [lyrics, setLyrics] = useState("")
-    // const [transcript, resetTranscript] = useSpeechRecognition({});
-    // const [isListening, setIsListening] = useState(false);
-    // const microphoneRef = useRef(null);
+    const [translation, setTranslation] = useState("")
+    const [showOriginalLyrics, setShowOriginalLyrics] = useState(true)
+    const [showIndividual, setShowIndividual] = useState(true)
+    const originalRef = useRef(null);
+    const translationRef = useRef(null);
 
     function chooseTrack(track) {
         setPlayingTrack(track)
         setSearch("")
         setLyrics("")
+        setTranslation("")
     }
 
     useEffect(() => {
@@ -44,9 +43,10 @@ function Dashboard({ code }) {
             }
         }).then(res => {
             setLyrics(res.data.lyrics)
+            setTranslation(res.data.translation)
         })
 
-        // axios.put('http://localhost:8080/lyricsk', {
+        // axios.put('http://localhost:8080/lyrics', {
         //     params: {
         //         track: playingTrack.title,
         //         artist: playingTrack.artist
@@ -98,21 +98,27 @@ function Dashboard({ code }) {
         });
     };
 
+    const handleClick = () => {
+        setShowOriginalLyrics(!showOriginalLyrics);
+    }
+
+    const handleScrollOriginal = () => {
+        translationRef.current.scrollTop = originalRef.current.scrollTop;
+    };
+
+    const handleScrollTranslation = () => {
+        originalRef.current.scrollTop = translationRef.current.scrollTop;
+    };
+
+    const handleIndividualClick = () => {
+        setShowIndividual(!showIndividual);
+    }
+
     return (
         <>
             <div className="header">
                 {/* <Link to="/"> */}
-                {/* <img
-                    className="header__icon"
-                    src={Triangle} alt="logo">
-                </img> */}
-                <div className="header__logo">
-                    <Logo />
-                    {/* <img className="header__logo--path1" src={Path1} alt="logo"></img> */}
-                    {/* <img className="header__logo--path2" src={Path2} alt="logo"></img> */}
-                    {/* <img className="header__logo--path3" src={Path3} alt="logo"></img> */}
-                    {/* <img className="header__logo--individual" src={Logo} alt="logo"></img> */}
-                </div>
+                <Logo className="header__logo" />
                 <h1 className="header__text">Lyrify</h1>
                 {/* </Link> */}
             </div>
@@ -132,10 +138,10 @@ function Dashboard({ code }) {
                         onChange={(e) => setSearch(e.target.value)}
                         src={microPhoneIcon}
                     />
-                    <button onClick={handleSpeech} className="dashboard__search--microphone">
+                    <button onClick={handleSpeech} className="dashboard__search--microphonebox">
                         <img
                             src={microPhoneIcon}
-                            id="image"
+                            className="dashboard__search--microphoneimage"
                             alt="">
                         </img>
                     </button>
@@ -148,12 +154,51 @@ function Dashboard({ code }) {
             </div>
             <div className="dashboard__line"></div>
             <div className="dashboard__line"></div>
-            <div>
-                {searchResults.length === 0 && (
-                    <div className='dashboard__lyrics'>
-                        {lyrics}
+            <div className="dashboard__centred">
+                {showIndividual &&
+                    <div>
+                        <div>
+                            {searchResults.length === 0 && (
+                                <div className='dashboard__lyrics' ref={originalRef} onScroll={handleScrollOriginal}>
+                                    {lyrics}
+                                </div>
+                            )}
+                        </div>
+                        <div>
+                            {searchResults.length === 0 && (
+                                <div className='dashboard__lyrics' ref={translationRef} onScroll={handleScrollTranslation}>
+                                    {translation}
+                                </div>
+                            )}
+                        </div>
                     </div>
-                )}
+                }
+                {!showIndividual &&
+                    <div>
+                        {showOriginalLyrics &&
+                            <div>
+                                {searchResults.length === 0 && (
+                                    <div className='dashboard__lyrics'>
+                                        {lyrics}
+                                    </div>
+                                )}
+                            </div>
+                        }
+                        {!showOriginalLyrics &&
+                            <div>
+                                {searchResults.length === 0 && (
+                                    <div className='dashboard__lyrics'>
+                                        {translation}
+                                    </div>
+                                )}
+                            </div>
+                        }
+                        <div>
+                            <button onClick={handleClick}>Show Translated</button>
+                        </div>
+                    </div>
+                }
+                <button onClick={handleIndividualClick}>Show Both</button>
             </div>
         </>
     )
