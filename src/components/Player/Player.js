@@ -9,7 +9,7 @@ function Player({ accessToken, trackUri }) {
     if (!accessToken) return null
     return (
         <SpotifyPlayer
-            initialVolume={10}
+            initialVolume={1}
             token={accessToken}
             showSaveIcon={true}
             callback={state => {
@@ -18,22 +18,22 @@ function Player({ accessToken, trackUri }) {
             play={play}
             uris={trackUri ? [trackUri] : []}
             styles={{
-                // activeColor: "#252e31",
-                // altColor: "#FFF",
+                activeColor: "#252e31", //unknown
+                altColor: "#252e31", //unknown
                 bgColor: "#252e31", //Background color
                 color: "#aab182", // icon colors
-                // errorColor: "#FFF",
+                errorColor: "#252e31", // unknown
                 height: 50, //album art made bigger
-                // loaderColor: "#FFF",
-                // loaderSize: 50,
-                // sliderColor: "#252e31",
-                // sliderHandleBorderRadius: 50,
-                // sliderHandleColor: "#FFF",
-                // sliderHeight: 50, //Slider height
+                loaderColor: "#252e31", //unknown
+                loaderSize: 100, //unknown
+                sliderColor: "#b0b886", //slider complete track color
+                sliderHandleBorderRadius: 100,
+                sliderHandleColor: "#252e31", // slider seeker
+                sliderHeight: 5, //Slider height
                 sliderTrackBorderRadius: 50, //curve radius of slider
-                sliderTrackColor: "#FFF", //incomplete track color
-                trackArtistColor: "#FFF", //artist name color
-                trackNameColor: "#FFF", //song name color
+                sliderTrackColor: "#50646a", // slider incomplete track color
+                trackArtistColor: "#7f8561", //artist name color
+                trackNameColor: "#b0b886", //song name color
             }}
         />
     )
