@@ -1,6 +1,5 @@
 import './Dashboard.scss';
 import { useRef, useState, useEffect } from 'react';
-// import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import SpotifyWebApi from 'spotify-web-api-node';
 import axios from 'axios';
 // import { Link } from 'react-router-dom';
@@ -18,13 +17,14 @@ function Dashboard({ code }) {
     const accessToken = useAuth(code)
     const [search, setSearch] = useState('')
     const [searchResults, setSearchResults] = useState([])
+    // const [showContainer, setShowContainer] = useState(false);
     const [playingTrack, setPlayingTrack] = useState()
     const [lyrics, setLyrics] = useState("")
     const [translation, setTranslation] = useState("")
     const [showOriginalLyrics, setShowOriginalLyrics] = useState(true)
-    const [showOriginalLyricsButton, setShowOriginalLyricsButton] = useState("show original")
+    const [showOriginalLyricsButton, setShowOriginalLyricsButton] = useState("show translated")
     const [showIndividual, setShowIndividual] = useState(true)
-    const [buttonText, setButtonText] = useState("show individual")
+    const [buttonText, setButtonText] = useState("show just the lyrics")
     const originalRef = useRef(null);
     const translationRef = useRef(null);
 
@@ -100,12 +100,21 @@ function Dashboard({ code }) {
         });
     };
 
+    // const handleInputChange = (e) => {
+    //     setSearch(e.target.value);
+    //     if (e.target.value === "") {
+    //         setShowContainer(true);
+    //     } else {
+    //         setShowContainer(false);
+    //     }
+    // }
+
     const handleClick = () => {
         setShowOriginalLyrics(!showOriginalLyrics);
-        if (showOriginalLyricsButton === "show original") {
-            setShowOriginalLyricsButton("show translated");
-        } else {
+        if (showOriginalLyricsButton === "show translated") {
             setShowOriginalLyricsButton("show original");
+        } else {
+            setShowOriginalLyricsButton("show translated");
         }
     }
 
@@ -119,10 +128,10 @@ function Dashboard({ code }) {
 
     const handleIndividualClick = () => {
         setShowIndividual(!showIndividual);
-        if (buttonText === "show individual") {
-            setButtonText("show side by side");
+        if (buttonText === "show just the lyrics") {
+            setButtonText("show lyrics alongside translation");
         } else {
-            setButtonText("show individual");
+            setButtonText("show just the lyrics");
         }
     }
 
@@ -142,7 +151,9 @@ function Dashboard({ code }) {
                             type="text"
                             placeholder="Search Songs/Artists"
                             value={search}
-                            onChange={(e) => setSearch(e.target.value)}
+                            onChange=
+                            // {handleInputChange}
+                            {(e) => setSearch(e.target.value)}
                             src={microPhoneIcon}
                         />
                         <button onClick={handleSpeech} className="dashboard__container--search--microphonebox">
@@ -153,10 +164,14 @@ function Dashboard({ code }) {
                             </img>
                         </button>
                     </div>
-                    <div
-                        className="dashboard__container--results">
-                        {searchResults.map(track => (<Search track={track} key={track.uri} chooseTrack={chooseTrack} />
-                        ))}
+                    <div className="dashboard__container--output">
+                        {/* {showContainer && */}
+                        <div
+                            className="dashboard__container--output--results">
+                            {searchResults.map(track => (<Search track={track} key={track.uri} chooseTrack={chooseTrack} />
+                            ))}
+                        </div>
+                        {/* } */}
                     </div>
                 </div>
                 <div className="dashboard__player">
@@ -166,53 +181,57 @@ function Dashboard({ code }) {
                     />
                 </div>
             </div>
-            <div className="dashboard__line"></div>
-            <div className="dashboard__line"></div>
-            <div className="dashboard__centred">
-                {showIndividual &&
-                    <div>
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="displaylyrics">
+                <div className="displaylyrics__centered">
+                    {showIndividual &&
                         <div>
-                            {searchResults.length === 0 && (
-                                <div className='dashboard__lyrics' ref={originalRef} onScroll={handleScrollOriginal}>
-                                    {lyrics}
-                                </div>
-                            )}
-                        </div>
-                        <div>
-                            {searchResults.length === 0 && (
-                                <div className='dashboard__lyrics' ref={translationRef} onScroll={handleScrollTranslation}>
-                                    {translation}
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                }
-                {!showIndividual &&
-                    <div>
-                        {showOriginalLyrics &&
                             <div>
                                 {searchResults.length === 0 && (
-                                    <div className='dashboard__lyrics'>
+                                    <div className="displaylyrics__centered--lyrics" ref={originalRef} onScroll={handleScrollOriginal}>
                                         {lyrics}
                                     </div>
                                 )}
                             </div>
-                        }
-                        {!showOriginalLyrics &&
-                            <div>
+                            <div className="displaylyrics__empty">
                                 {searchResults.length === 0 && (
-                                    <div className='dashboard__lyrics'>
+                                    <div className="displaylyrics__centered--lyrical" ref={translationRef} onScroll={handleScrollTranslation}>
                                         {translation}
                                     </div>
                                 )}
                             </div>
-                        }
-                        <div>
-                            <button onClick={handleClick}>{showOriginalLyricsButton}</button>
                         </div>
-                    </div>
-                }
-                <button onClick={handleIndividualClick}>{buttonText}</button>
+                    }
+                    {!showIndividual &&
+                        <div className="displaylyrics__centered--original">
+                            {showOriginalLyrics &&
+                                <div className="displaylyrics__centered--original--a">
+                                    {searchResults.length === 0 && (
+                                        <div className='displaylyrics__centered--original--a--b'>
+                                            {lyrics}
+                                        </div>
+                                    )}
+                                </div>
+                            }
+                            {!showOriginalLyrics &&
+                                <div className="displaylyrics__centered--original--a">
+                                    {searchResults.length === 0 && (
+                                        <div className='displaylyrics__centered--original--a--b'>
+                                            {translation}
+                                        </div>
+                                    )}
+                                </div>
+                            }
+                            <div>
+                                <button className="displaylyrics__centered--buttona" onClick={handleClick}>{showOriginalLyricsButton}</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div>
+                    <button className="displaylyrics__centered--buttonb" onClick={handleIndividualClick}>{buttonText}</button>
+                </div>
             </div>
         </>
     )
