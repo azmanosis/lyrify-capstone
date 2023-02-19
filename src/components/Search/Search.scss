@@ -1,0 +1,28 @@
+@use "../../styles/partials/index" as *;
+
+.search {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  margin-bottom: 1rem;
+
+  &__image {
+    height: 64px;
+    width: 64px;
+    margin: 0 0 1rem 0;
+  }
+
+  &__text {
+    // margin-left: 1rem;
+
+    &--title {
+      color: $olive;
+      font-size: 12.5px;
+    }
+
+    &--artist {
+      color: $fadedolive;
+      font-size: 12px;
+    }
+  }
+}
