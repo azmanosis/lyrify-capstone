@@ -1,4 +1,5 @@
 import React from 'react';
+import './Search.scss';
 
 function Search({ track, chooseTrack }) {
     function handlePlay() {
@@ -6,13 +7,13 @@ function Search({ track, chooseTrack }) {
     }
 
     return (
-        <div className="d-flex m-2 align-items-center" style={{ cursor: "pointer" }} onClick={handlePlay}>
-            <img src={track.albumUrl} style={{ height: '64px', width: '64px' }} alt="" />
-            <div className="ml-3">
-                <div>
+        <div className="search" onClick={handlePlay}>
+            <img src={track.albumUrl} className="search__image" alt="" />
+            <div className="search__text">
+                <div className="search__text--title">
                     {track.title}
                 </div>
-                <div className="text-muted">{track.artist}</div>
+                <div className="search__text--artist">{track.artist}</div>
             </div>
         </div>
     )
