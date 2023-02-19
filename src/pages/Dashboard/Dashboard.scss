@@ -1,33 +1,9 @@
 @use "../../styles/partials/index" as *;
 
-#root {
-  height: 90%;
-  @include nomargin_nopadding;
-}
 body {
   display: flex;
-  align-items: normal;
   background-color: $darkblue;
 }
-
-// ::-webkit-scrollbar {
-//   width: 5px;
-// }
-// ::-webkit-scrollbar-track {
-//   background: $darkblue;
-// }
-
-// ::-webkit-scrollbar-button {
-//   display: none;
-// }
-
-// ::-webkit-scrollbar-corner {
-//   background: $darkblue;
-// }
-
-// ::-webkit-scrollbar-thumb {
-//   background: $olive;
-// }
 
 .header {
   display: flex;
@@ -35,10 +11,30 @@ body {
   width: 95%;
   margin: 0.5rem 0 1rem 1rem;
 
+  @include tablet {
+    margin: 1rem 0 1rem 1rem;
+  }
+
+  #triangleLogo {
+    height: 1rem;
+
+    @include desktop {
+      height: 1.5rem;
+    }
+  }
+
   &__logo {
     margin: 0;
     width: 1rem; //67,982px
     height: 1rem;
+
+    @include tablet {
+      width: 1.5rem;
+    }
+
+    @include desktop {
+      width: 3rem;
+    }
 
     #rightPath {
       animation: 4.1s ease-in-out infinite alternate running rightPath;
@@ -86,12 +82,19 @@ body {
     margin: 0 0 0 0.5rem;
     letter-spacing: 0.15rem;
     font-size: 1rem;
+
+    @include tablet {
+      letter-spacing: 0.25rem;
+    }
+
+    @include desktop {
+      font-size: 1.7rem;
+    }
   }
 }
 
 .dashboard {
   background-color: $darkblue;
-  width: 100vw;
 
   &__container {
     margin: 0 0.25rem 0 0.25rem;
@@ -103,6 +106,14 @@ body {
       border-radius: 0.25rem;
       font-family: amedium;
       margin: 0 1.5rem 0 1.5rem;
+
+      @include tablet {
+        margin: 0 1.5rem 0 25rem;
+      }
+
+      @include desktop {
+        margin: 0 1.5rem 0 60rem;
+      }
 
       &--input {
         border: none;
@@ -120,6 +131,14 @@ body {
           color: $fadedblue;
           font-weight: normal;
         }
+
+        @include tablet {
+          width: 17rem;
+        }
+
+        @include desktop {
+          width: 14rem;
+        }
       }
 
       &--microphonebox {
@@ -130,6 +149,10 @@ body {
         padding: 0 1rem 0 1rem;
         background-color: $darkblue;
         border: none;
+        cursor: nw-resize;
+        // cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg id='voice_recognition' transform='translate(-1166.276 -1194.529)'%3E%3Cpath id='Path_13' data-name='Path 13' d='M1169 1204.527a17.083 17.083 0 0 1 14.361-8c11.286 0 14.112 8.059 14.112 8.059' fill='none' stroke='%23b0b886' stroke-linecap='round' stroke-linejoin='round' stroke-width='4'/%3E%3Cpath id='Path_14' data-name='Path 14' d='M1169 1204.527s3.431-8 10.947-8c8.6 0 10.757 8.059 10.757 8.059' transform='translate(3.385 7.34)' fill='none' stroke='%23b0b886' stroke-linecap='round' stroke-linejoin='round' stroke-width='3'/%3E%3Cpath id='Path_15' data-name='Path 15' d='M1169 1204.527s2.479-8 7.907-8c6.214 0 7.77 8.059 7.77 8.059' transform='translate(6.398 14.435)' fill='none' stroke='%23b0b886' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E")
+        //     32 32,
+        //   pointer;
 
         &--microphoneimage {
           height: 1.5rem;
@@ -144,7 +167,16 @@ body {
       justify-content: center;
       margin: 1rem 0 0 0;
 
+      @include tablet {
+        margin: 1rem 1.5rem 0 25rem;
+      }
+
+      @include desktop {
+        margin: 1rem 1.5rem 0 60rem;
+      }
+
       &--results {
+        background-color: $darkblue;
         margin: 0 0 0 1rem;
         width: 15rem;
         height: 15rem;
@@ -152,9 +184,13 @@ body {
         grid-template-columns: 1fr 1fr;
         gap: 5%;
         overflow-x: scroll;
-        background-color: $darkblue;
-        color: $olive;
-        font-size: 12.5px;
+        // z-index: 1;
+
+        @include tablet {
+          margin: 0;
+          padding: 0 1rem 0 1rem;
+          width: 17rem;
+        }
 
         &::-webkit-scrollbar {
           width: 5px;
@@ -174,6 +210,18 @@ body {
   &__player {
     margin: 2rem 1rem 1rem 1rem;
     width: 90%;
+
+    @include tablet {
+      position: relative;
+      bottom: 21.5rem;
+      width: 45%;
+      margin-bottom: -20rem;
+    }
+
+    @include desktop {
+      width: 60%;
+      margin: 2rem 1rem -20rem 2rem;
+    }
   }
 }
 
@@ -188,6 +236,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 2rem 0 0 0;
 
   &__empty {
     height: 1px;
@@ -196,9 +245,8 @@ body {
   &__centered {
     display: flex;
     justify-content: center;
-    // width: 90%;
 
-    &--lyrics {
+    &--lyricsen {
       padding: 1rem 0 1rem 0;
       overflow-x: scroll;
       height: 25vh;
@@ -207,6 +255,12 @@ body {
       white-space: pre-line;
       text-align: center;
       color: $olive;
+      // z-index: -1;
+      mask-image: linear-gradient(
+        to bottom,
+        $darkblue calc(100% - 3rem),
+        transparent 100%
+      );
 
       &::-webkit-scrollbar {
         width: 5px;
@@ -219,11 +273,27 @@ body {
       &::-webkit-scrollbar-thumb {
         background-color: $olive;
       }
+
+      @include tablet {
+        height: 40vh;
+        font-size: 2rem;
+        line-height: 6rem;
+        padding: 0 0 10rem 0;
+        mask-image: linear-gradient(
+          to bottom,
+          $darkblue calc(100% - 7rem),
+          transparent 100%
+        );
+      }
+
+      @include desktop {
+        height: 60vh;
+      }
     }
 
-    &--lyrical {
+    &--lyricstran {
       position: relative;
-      bottom: 13rem;
+      top: 1.2rem;
       margin-bottom: -13rem;
       padding: 1rem 0 1rem 0;
       overflow-x: scroll;
@@ -233,6 +303,12 @@ body {
       white-space: pre-wrap;
       text-align: center;
       color: $fadedolive;
+      // z-index: -1;
+      mask-image: linear-gradient(
+        to bottom,
+        $darkblue calc(100% - 3rem),
+        transparent 100%
+      );
 
       &::-webkit-scrollbar {
         display: none;
@@ -245,6 +321,24 @@ body {
       &::-webkit-scrollbar-thumb {
         background-color: $olive;
       }
+
+      @include tablet {
+        height: 40vh;
+        top: 3rem;
+        font-size: 1.2rem;
+        line-height: 6rem;
+        padding: 0 2rem 10rem 2rem;
+        mask-image: linear-gradient(
+          to bottom,
+          $darkblue calc(100% - 7rem),
+          transparent 100%
+        );
+      }
+
+      @include desktop {
+        height: 60vh;
+        top: 3rem;
+      }
     }
 
     &--original {
@@ -256,14 +350,24 @@ body {
       &--a {
         width: 90%;
 
+        @include tablet {
+          margin: 0 5rem;
+        }
+
         &--b {
           overflow-x: scroll;
           height: 25vh;
-          font-size: 1.2rem;
+          font-size: 1rem;
           line-height: 1.5rem;
           white-space: pre-line;
           text-align: center;
           color: $olive;
+          padding: 0 0 10rem 0;
+          mask-image: linear-gradient(
+            to bottom,
+            $darkblue calc(100% - 10rem),
+            transparent 100%
+          );
 
           &::-webkit-scrollbar {
             width: 5px;
@@ -275,6 +379,16 @@ body {
 
           &::-webkit-scrollbar-thumb {
             background-color: $olive;
+          }
+
+          @include tablet {
+            height: 40vh;
+            line-height: 4rem;
+            font-size: 2rem;
+          }
+
+          @include desktop {
+            height: 60vh;
           }
         }
       }
@@ -288,33 +402,35 @@ body {
       border-radius: 0.25rem;
       color: $fadedblue;
       background-color: $darkblue;
+      cursor: alias;
+
+      // @include tablet {
+      //   margin: 65vh 0 0 0;
+      // }
     }
 
     &--buttonb {
-      margin: 2rem 0 0 0;
+      margin: 1.5rem 0 0 0;
       border: solid 1px $white;
       font-family: amedium;
       padding: 0.25rem;
       border-radius: 0.25rem;
       color: $fadedblue;
       background-color: $darkblue;
+      cursor: alias;
+
+      @include tablet {
+        // position: absolute;
+        // bottom: 5%;
+        // align-items: center;
+        // @include nomargin_nopadding;
+        margin: 4rem 0 0 0;
+        // margin: 65vh 0 0 0;
+      }
+
+      @include desktop {
+        margin: 2rem 0 0 0;
+      }
     }
   }
 }
-
-// &__lyrics {
-//   font-family: abold;
-//   font-size: 1rem;
-//   width: 50rem;
-//   // line-height: 7rem;
-//   display: flex;
-//   justify-content: center;
-//   font-weight: bold;
-//   text-align: center;
-//   white-space: pre;
-//   color: $olive;
-//   height: 25vh;
-//   overflow-x: scroll;
-//   // overflow-y: none;
-//   @include nomargin_nopadding;
-// }
