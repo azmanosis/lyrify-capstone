@@ -27,6 +27,7 @@ function Dashboard({ code }) {
     const [buttonText, setButtonText] = useState("show just the lyrics")
     const originalRef = useRef(null);
     const translationRef = useRef(null);
+    let timeout = null;
 
     function chooseTrack(track) {
         setPlayingTrack(track)
@@ -101,7 +102,7 @@ function Dashboard({ code }) {
     };
 
     // const handleInputChange = (e) => {
-    //     setSearch(e.target.value);
+    //     setSearch(e.target.value)
     //     if (e.target.value === "") {
     //         setShowContainer(true);
     //     } else {
@@ -119,11 +120,25 @@ function Dashboard({ code }) {
     }
 
     const handleScrollOriginal = () => {
-        translationRef.current.scrollTop = originalRef.current.scrollTop;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            const scrollTop = originalRef.current.scrollTop;
+            if (translationRef.current.scrollTop !== scrollTop) {
+                translationRef.current.scrollTop = scrollTop;
+            }
+        }, 5);
     };
 
     const handleScrollTranslation = () => {
-        originalRef.current.scrollTop = translationRef.current.scrollTop;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            const scrollTop = translationRef.current.scrollTop;
+            if (originalRef.current.scrollTop !== scrollTop) {
+                originalRef.current.scrollTop = scrollTop;
+            }
+        }, 5);
+
+        // originalRef.current.scrollTop = translationRef.current.scrollTop;
     };
 
     const handleIndividualClick = () => {
@@ -187,17 +202,17 @@ function Dashboard({ code }) {
                 <div className="displaylyrics__centered">
                     {showIndividual &&
                         <div>
-                            <div>
+                            <div className="displaylyrics__empty">
                                 {searchResults.length === 0 && (
-                                    <div className="displaylyrics__centered--lyrics" ref={originalRef} onScroll={handleScrollOriginal}>
-                                        {lyrics}
+                                    <div className="displaylyrics__centered--lyricstran" ref={translationRef} onScroll={handleScrollTranslation}>
+                                        {translation}
                                     </div>
                                 )}
                             </div>
-                            <div className="displaylyrics__empty">
+                            <div>
                                 {searchResults.length === 0 && (
-                                    <div className="displaylyrics__centered--lyrical" ref={translationRef} onScroll={handleScrollTranslation}>
-                                        {translation}
+                                    <div className="displaylyrics__centered--lyricsen" ref={originalRef} onScroll={handleScrollOriginal}>
+                                        {lyrics}
                                     </div>
                                 )}
                             </div>
