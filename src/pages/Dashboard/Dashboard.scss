@@ -10,6 +10,12 @@ body {
   flex-direction: row;
   width: 95%;
   margin: 0.5rem 0 1rem 1rem;
+  text-decoration: none;
+
+  &:hover {
+    color: $fadedolive;
+    text-decoration: none;
+  }
 
   @include tablet {
     margin: 1rem 0 1rem 1rem;
@@ -111,8 +117,17 @@ body {
         margin: 0 1.5rem 0 25rem;
       }
 
+      @include nesthub {
+        margin: 0 1.5rem 0 45rem;
+      }
+
       @include desktop {
         margin: 0 1.5rem 0 60rem;
+      }
+
+      @include highest {
+        margin: 0 12rem 0 85rem;
+        border-radius: 0.5rem;
       }
 
       &--input {
@@ -138,6 +153,10 @@ body {
 
         @include desktop {
           width: 14rem;
+        }
+
+        @include highest {
+          width: 15rem;
         }
       }
 
@@ -173,6 +192,10 @@ body {
 
       @include desktop {
         margin: 1rem 1.5rem 0 60rem;
+      }
+
+      @include highest {
+        margin: 0 12rem 0 85rem;
       }
 
       &--results {
@@ -221,6 +244,12 @@ body {
     @include desktop {
       width: 60%;
       margin: 2rem 1rem -20rem 2rem;
+    }
+
+    @include highest {
+      width: 40%;
+      bottom: 20.5rem;
+      margin: 2rem 1rem -18rem 12rem;
     }
   }
 }
@@ -398,7 +427,7 @@ body {
       margin: 0.5rem 0 0 0;
       border: solid 1px $white;
       font-family: amedium;
-      padding: 0.25rem;
+      padding: 0.5rem;
       border-radius: 0.25rem;
       color: $fadedblue;
       background-color: $darkblue;
@@ -413,7 +442,7 @@ body {
       margin: 1.5rem 0 0 0;
       border: solid 1px $white;
       font-family: amedium;
-      padding: 0.25rem;
+      padding: 0.5rem;
       border-radius: 0.25rem;
       color: $fadedblue;
       background-color: $darkblue;

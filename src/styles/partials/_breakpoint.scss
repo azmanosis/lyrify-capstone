@@ -1,8 +1,9 @@
 $low-breakpoint: 0px;
 $mobile-breakpoint: 320px;
 $tablet-breakpoint: 768px;
+$nesthub-breakpoint: 1024px;
 $desktop-breakpoint: 1280px;
-$high-breakpoint: 1920px;
+$high-breakpoint: 1440px;
 
 @mixin low {
   @media screen and (min-width: $low-breakpoint) {
@@ -12,6 +13,12 @@ $high-breakpoint: 1920px;
 
 @mixin mobile {
   @media screen and (min-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+
+@mixin nesthub {
+  @media screen and (min-width: $nesthub-breakpoint) {
     @content;
   }
 }
@@ -28,7 +35,7 @@ $high-breakpoint: 1920px;
   }
 }
 
-@mixin high {
+@mixin highest {
   @media screen and (min-width: $high-breakpoint) {
     @content;
   }
