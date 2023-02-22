@@ -2,7 +2,7 @@ import './Dashboard.scss';
 import { useRef, useState, useEffect } from 'react';
 import SpotifyWebApi from 'spotify-web-api-node';
 import axios from 'axios';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import useAuth from '../../components/Auth/useAuth';
 import Search from '../../components/Search/Search';
 import Player from '../../components/Player/Player';
@@ -152,11 +152,11 @@ function Dashboard({ code }) {
 
     return (
         <>
-            <div className="header">
-                {/* <Link to="/"> */}
-                <Logo className="header__logo" />
-                <h1 className="header__text">Lyrify</h1>
-                {/* </Link> */}
+            <div>
+                <Link to="/" className="header">
+                    <Logo className="header__logo" />
+                    <h1 className="header__text">Lyrify</h1>
+                </Link>
             </div>
             <div className="dashboard">
                 <div className="dashboard__container">
@@ -233,7 +233,7 @@ function Dashboard({ code }) {
                                 <div className="displaylyrics__centered--original--a">
                                     {searchResults.length === 0 && (
                                         <div className='displaylyrics__centered--original--a--b'>
-                                            {translation}
+                                            {translation ? translation : "Okay so here is the thing, your search was too unique or this is an English song"}
                                         </div>
                                     )}
                                 </div>
