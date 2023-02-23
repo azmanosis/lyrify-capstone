@@ -17,9 +17,9 @@ function Dashboard({ code }) {
     const accessToken = useAuth(code)
     const [search, setSearch] = useState('')
     const [searchResults, setSearchResults] = useState([])
-    // const [showContainer, setShowContainer] = useState(false);
     const [playingTrack, setPlayingTrack] = useState()
     const [lyrics, setLyrics] = useState("")
+    const [findLyrics, setFindLyrics] = useState("")
     const [translation, setTranslation] = useState("")
     const [showOriginalLyrics, setShowOriginalLyrics] = useState(true)
     const [showOriginalLyricsButton, setShowOriginalLyricsButton] = useState("show translated")
@@ -32,6 +32,7 @@ function Dashboard({ code }) {
     function chooseTrack(track) {
         setPlayingTrack(track)
         setSearch("")
+        setFindLyrics("")
         setLyrics("")
         setTranslation("")
     }
@@ -45,6 +46,7 @@ function Dashboard({ code }) {
                 artist: playingTrack.artist
             }
         }).then(res => {
+            setFindLyrics(res.data.findLyrics)
             setLyrics(res.data.lyrics)
             setTranslation(res.data.translation)
         })
@@ -137,8 +139,6 @@ function Dashboard({ code }) {
                 originalRef.current.scrollTop = scrollTop;
             }
         }, 5);
-
-        // originalRef.current.scrollTop = translationRef.current.scrollTop;
     };
 
     const handleIndividualClick = () => {
@@ -212,7 +212,7 @@ function Dashboard({ code }) {
                             <div>
                                 {searchResults.length === 0 && (
                                     <div className="displaylyrics__centered--lyricsen" ref={originalRef} onScroll={handleScrollOriginal}>
-                                        {lyrics}
+                                        {findLyrics || lyrics}
                                     </div>
                                 )}
                             </div>
@@ -224,7 +224,7 @@ function Dashboard({ code }) {
                                 <div className="displaylyrics__centered--original--a">
                                     {searchResults.length === 0 && (
                                         <div className='displaylyrics__centered--original--a--b'>
-                                            {lyrics}
+                                            {findLyrics || lyrics}
                                         </div>
                                     )}
                                 </div>
