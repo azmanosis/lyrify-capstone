@@ -284,7 +284,6 @@ body {
       white-space: pre-line;
       text-align: center;
       color: $olive;
-      // z-index: -1;
       mask-image: linear-gradient(
         to bottom,
         $darkblue calc(100% - 3rem),
@@ -332,7 +331,7 @@ body {
       white-space: pre-wrap;
       text-align: center;
       color: $fadedolive;
-      // z-index: -1;
+      text-transform: capitalize;
       mask-image: linear-gradient(
         to bottom,
         $darkblue calc(100% - 3rem),
