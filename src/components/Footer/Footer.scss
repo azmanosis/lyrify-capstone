@@ -1,0 +1,30 @@
+@use "../../styles/partials/index" as *;
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+
+  &__text {
+    color: $fadedblue;
+    font-size: 0.7rem;
+    margin: 0;
+    text-transform: capitalize;
+  }
+
+  &__git {
+    padding: 0 0.5rem;
+    height: 0.6rem;
+  }
+
+  &__linkedin {
+    padding: 0 0.5rem;
+    height: 0.6rem;
+  }
+}
