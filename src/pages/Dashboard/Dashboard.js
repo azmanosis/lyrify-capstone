@@ -50,14 +50,8 @@ function Dashboard({ code }) {
             setLyrics(res.data.lyrics)
             setTranslation(res.data.translation)
         })
-
-        // axios.put('http://localhost:8080/lyrics', {
-        //     params: {
-        //         track: playingTrack.title,
-        //         artist: playingTrack.artist
-        //     }
-        // });
     }, [playingTrack])
+
 
     useEffect(() => {
         if (!accessToken) return
@@ -92,6 +86,7 @@ function Dashboard({ code }) {
         return () => cancel = true
     }, [search, accessToken])
 
+
     const handleSpeech = () => {
         const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
         recognition.interimResults = false;
@@ -103,14 +98,6 @@ function Dashboard({ code }) {
         });
     };
 
-    // const handleInputChange = (e) => {
-    //     setSearch(e.target.value)
-    //     if (e.target.value === "") {
-    //         setShowContainer(true);
-    //     } else {
-    //         setShowContainer(false);
-    //     }
-    // }
 
     const handleClick = () => {
         setShowOriginalLyrics(!showOriginalLyrics);
@@ -120,6 +107,7 @@ function Dashboard({ code }) {
             setShowOriginalLyricsButton("show translated");
         }
     }
+
 
     const handleScrollOriginal = () => {
         clearTimeout(timeout);
@@ -131,6 +119,7 @@ function Dashboard({ code }) {
         }, 5);
     };
 
+
     const handleScrollTranslation = () => {
         clearTimeout(timeout);
         timeout = setTimeout(() => {
@@ -141,6 +130,7 @@ function Dashboard({ code }) {
         }, 5);
     };
 
+
     const handleIndividualClick = () => {
         setShowIndividual(!showIndividual);
         if (buttonText === "show just the lyrics") {
@@ -149,6 +139,16 @@ function Dashboard({ code }) {
             setButtonText("show just the lyrics");
         }
     }
+
+
+    // const handleInputChange = (e) => {
+    //     setSearch(e.target.value)
+    //     if (e.target.value === "") {
+    //         setShowContainer(true);
+    //     } else {
+    //         setShowContainer(false);
+    //     }
+    // }
 
     return (
         <>
@@ -169,13 +169,14 @@ function Dashboard({ code }) {
                             onChange=
                             // {handleInputChange}
                             {(e) => setSearch(e.target.value)}
-                            src={microPhoneIcon}
-                        />
-                        <button onClick={handleSpeech} className="dashboard__container--search--microphonebox">
+                            src={microPhoneIcon} />
+                        <button
+                            onClick={handleSpeech}
+                            className="dashboard__container--search--microphonebox">
                             <img
                                 src={microPhoneIcon}
                                 className="dashboard__container--search--microphonebox--microphoneimage"
-                                alt="">
+                                alt="microphone">
                             </img>
                         </button>
                     </div>
@@ -192,8 +193,7 @@ function Dashboard({ code }) {
                 <div className="dashboard__player">
                     <Player
                         accessToken={accessToken}
-                        trackUri={playingTrack?.uri}
-                    />
+                        trackUri={playingTrack?.uri} />
                 </div>
             </div>
             <div className="line"></div>
@@ -204,14 +204,19 @@ function Dashboard({ code }) {
                         <div>
                             <div className="displaylyrics__empty">
                                 {searchResults.length === 0 && (
-                                    <div className="displaylyrics__centered--lyricstran" ref={translationRef} onScroll={handleScrollTranslation}>
+                                    <div
+                                        className="displaylyrics__centered--lyricstran"
+                                        ref={translationRef}
+                                        onScroll={handleScrollTranslation}>
                                         {translation}
                                     </div>
                                 )}
                             </div>
                             <div>
                                 {searchResults.length === 0 && (
-                                    <div className="displaylyrics__centered--lyricsen" ref={originalRef} onScroll={handleScrollOriginal}>
+                                    <div
+                                        className="displaylyrics__centered--lyricsen"
+                                        ref={originalRef} onScroll={handleScrollOriginal}>
                                         {findLyrics || lyrics}
                                     </div>
                                 )}
@@ -239,13 +244,21 @@ function Dashboard({ code }) {
                                 </div>
                             }
                             <div>
-                                <button className="displaylyrics__centered--buttona" onClick={handleClick}>{showOriginalLyricsButton}</button>
+                                <button
+                                    className="displaylyrics__centered--buttona"
+                                    onClick={handleClick}>
+                                    {showOriginalLyricsButton}
+                                </button>
                             </div>
                         </div>
                     }
                 </div>
                 <div>
-                    <button className="displaylyrics__centered--buttonb" onClick={handleIndividualClick}>{buttonText}</button>
+                    <button
+                        className="displaylyrics__centered--buttonb"
+                        onClick={handleIndividualClick}>
+                        {buttonText}
+                    </button>
                 </div>
             </div>
         </>

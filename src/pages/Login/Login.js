@@ -12,7 +12,11 @@ function Login() {
                     <Logo />
                 </div>
                 <div className="login__spotify">
-                    <a className="login__spotify--url" href={AUTH_URL}>Login via Spotify</a>
+                    <a
+                        className="login__spotify--url"
+                        href={AUTH_URL}>
+                        Login via Spotify
+                    </a>
                 </div>
             </div>
         </>
