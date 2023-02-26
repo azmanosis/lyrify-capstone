@@ -18,7 +18,7 @@
 
 # Motivation
 
-<p>Music is the language without barriers, in recent years, we are seeing an uptrend of this in the music we listen to, BTS, a Korean boy band is considered a high achiever of having their music play across radio stations globally. Back in 2002, Macarena was charitng as top dance song. Though the songs are great, unless you are native to the language, it is difficult to understand what is the meaning behind the song's lyrics. On the otherside we have English songs, whose lyrics everyone is curious to learn as the artist of the song intended to write. An example of this is SAINt JHN - Roses (Imanbek Remix)</br></br>Lyrify will help bridge that gap by display the lyrics for every song searched via Spotify as well for the Non-English Songs, provide a translation so everyone can read the thoughts conveyed via the music.</p></br>
+<p>Music is the language without barriers, in recent years, we are seeing an uptrend of this in the music we listen to, BTS, a Korean boy band is considered a high achiever of having their music play across radio stations globally. Back in 2002, Macarena was charting as top dance song. Though the songs are great, unless you are native to the language, it is difficult to understand what is the meaning behind the song's lyrics. On the otherside we have English songs, whose lyrics everyone is curious to learn as the artist of the song intended to write. An example of this is SAINt JHN - Roses (Imanbek Remix)</br></br>Lyrify will help bridge that gap by displaying the lyrics for every song searched via Spotify as well for the non-english songs, provide a translation so everyone can read the thoughts conveyed via the music.</p></br>
 
 # Key Features
 
@@ -40,7 +40,7 @@ $ cd lyrify-capstone
 # Install dependencies
 $ npm install
 # Run the app
-$ npm start</li>
+$ npm start
 ```
 
 <p>Open <a href="http://localhost:3000">http://localhost:3000</a> in a browser to view the app</p></br>
