@@ -5,106 +5,57 @@
     <h1 align="center" style="color:#b0b886;"><strong>Lyrify</strong></h1>
 </p>
 
-<p align='center'> This is the Client Side of the Project</p>
+<p align='center' style="font-weight:800"> This is the Client Side of the Project</p></br>
+
+<p align='center'>
+    <a href="#motivation">Motivation</a> • 
+    <a href="#key-features">Key Features</a> • 
+    <a href="#how-to-install">How To Install</a> • 
+    <a href="tech-dependencies">Tech Dependencies</a> • 
+    <a href="demo">Demo</a>
+</p></br>
 
 # Motivation
 
-<h3></h3>
+<h3>Music is the language without barriers, in recent years, we are seeing an uptrend of this in the music we listen to, BTS, a Korean boy band is considered a high achiever of having their music play across radio stations globally. Back in 2002, Macarena was charitng as top dance song. Though the songs are great, unless you are native to the language, it is difficult to understand what is the meaning behind the song's lyrics. On the otherside we have English songs, whose lyrics everyone is curious to learn as the artist of the song intended to write. An example of this is SAINt JHN - Roses (Imanbek Remix)</br></br>Lyrify will help bridge that gap by display the lyrics for every song searched via Spotify as well for the Non-English Songs, provide a translation so everyone can read the thoughts conveyed via the music.</h3></br>
 
 # Key Features
 
+<p> Lyrics and Translation for non-english song are displayed simultaneously or seperately based on requirement of the user</p>
+<p>Search displays upto 20 results for user to find the right song</p>
+<p> Spotify Web Player allows user to connect to devices other than the Web Player, example: Mobile or Google Speaker</p></br>
+
 # How To Install
 
-<p>To Run the Program on the Client Side <strong>Please ensure <a href='https://github.com/azmanosis/lyrify-capstone-api' target="_blank">Server Side</a> is Set Up and Running</strong> then follow the instructions below:</p>
+<p>To Run the Program on the Client Side <strong>Please ensure <a href='https://github.com/azmanosis/lyrify-capstone-api' target="_blank" rel="noreferrer">Server Side</a> is set up and running</strong> then follow the instructions below:</p>
 
-<p> Open an IDE program, preferable VS Code.</br>Under `Terminal` in `VS Code` select `New Terminal`
+<p> Open an IDE program, preferable VS Code.</br>Under <span style="color:#50646a">Terminal</span> in <span style="color:#50646a">VS Code</span> select <span style="color:#50646a">New Terminal</span>
 <ul>
-    <span># Clone this repository</span>
+    <span style="color:grey"># Clone this repository</span>
 <li> $ git clone https://github.com/azmanosis/lyrify-capstone.git</li>
-    <span># Go into the folder</span>
+    <span style="color:grey"># Go into the folder</span>
 <li> $ cd lyrify-capstone</li>
-    <span># Install dependencies</span>
+    <span style="color:grey"># Install dependencies</span>
 <li> $ npm install</li>
-    <span> # Run the app</span>
+    <span style="color:grey"> # Run the app</span>
 <li> $ npm start</li>
 </ul>
+
 </p>
 
-# What is the Secret?
+<p>Open <a href="http://localhost:3000">http://localhost:3000</a> in a browser to view the app</p></br>
 
-# A Few Key Packages
+# Tech Dependencies
+
+<h4> Installed via <a href="#Install-dependencies" style="color:grey; text-decoration:none;">npm install</a> in previous step</h4></br>
+
+<a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png" height="30"/></a>
+<a href="https://reactrouter.com/en/main" target="_blank" rel="noreferrer"><img src="https://reactrouter.com/_brand/react-router-color.png" height="30"/></a>
+<a href="https://axios-http.com/docs/intro" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/axios/axios/v1.x/test/unit/adapters/axios.png" height="30"/></a>
+<a href="https://sass-lang.com/" target="_blank" rel="noreferrer"><img src="https://logos-download.com/wp-content/uploads/2016/09/Sass_logo.png" height="30"/></a>
 
 # Demo
 
-# Credits
+# Credits:
 
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p>Support and guidance from the BrainStation Educators and TA's</p>
