@@ -2,7 +2,41 @@
 
 <p align="center">
     <img width='300' src='./src/assets/icons/logo.svg'>
+    <h1 align="center" style="color:#b0b886;"><strong>Lyrify</strong></h1>
 </p>
+
+<p align='center'> This is the Client Side of the Project</p>
+
+# Motivation
+
+<h3></h3>
+
+# Key Features
+
+# How To Install
+
+<p>To Run the Program on the Client Side `Please ensure `<a href='https://github.com/azmanosis/lyrify-capstone-api' target="_blank">Server Side</a>` is Set Up and Running` then follow the instructions below:</p>
+
+<p> Open an IDE program, preferable VS Code.</br>Under `Terminal` in `VS Code` select `New Terminal`
+<ul>
+    <span># Clone this repository</span>
+<li> $ git clone https://github.com/azmanosis/lyrify-capstone.git</li>
+    <span># Go into the folder</span>
+<li> $ cd lyrify-capstone</li>
+    <span># Install dependencies</span>
+<li> $ npm install</li>
+    <span> # Run the app</span>
+<li> $ npm start</li>
+</ul>
+</p>
+
+# What is the Secret?
+
+# A Few Key Packages
+
+# Demo
+
+# Credits
 
 # Getting Started with Create React App
 
