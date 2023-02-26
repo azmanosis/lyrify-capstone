@@ -15,7 +15,7 @@
 
 # How To Install
 
-<p>To Run the Program on the Client Side `Please ensure `<a href='https://github.com/azmanosis/lyrify-capstone-api' target="_blank">Server Side</a>` is Set Up and Running` then follow the instructions below:</p>
+<p>To Run the Program on the Client Side <strong>Please ensure <a href='https://github.com/azmanosis/lyrify-capstone-api' target="_blank">Server Side</a> is Set Up and Running</strong> then follow the instructions below:</p>
 
 <p> Open an IDE program, preferable VS Code.</br>Under `Terminal` in `VS Code` select `New Terminal`
 <ul>
