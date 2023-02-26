@@ -2,7 +2,7 @@
 
 <p align="center">
     <img width='300' src='./src/assets/icons/logo.svg'>
-    <h1 align="center" style="color:#b0b886;"><strong>Lyrify</strong></h1>
+    <h1 align="center"><strong>Lyrify</strong></h1>
 </p>
 
 <p align='center' style="font-weight:800"> This is the Client Side of the Project</p></br>
@@ -11,13 +11,14 @@
     <a href="#motivation">Motivation</a> • 
     <a href="#key-features">Key Features</a> • 
     <a href="#how-to-install">How To Install</a> • 
-    <a href="tech-dependencies">Tech Dependencies</a> • 
-    <a href="demo">Demo</a>
+    <a href="#tech-dependencies">Tech Dependencies</a> • 
+    <a href="#demo">Demo</a> • 
+    <a href="#credits">Credits</a>
 </p></br>
 
 # Motivation
 
-<h3>Music is the language without barriers, in recent years, we are seeing an uptrend of this in the music we listen to, BTS, a Korean boy band is considered a high achiever of having their music play across radio stations globally. Back in 2002, Macarena was charitng as top dance song. Though the songs are great, unless you are native to the language, it is difficult to understand what is the meaning behind the song's lyrics. On the otherside we have English songs, whose lyrics everyone is curious to learn as the artist of the song intended to write. An example of this is SAINt JHN - Roses (Imanbek Remix)</br></br>Lyrify will help bridge that gap by display the lyrics for every song searched via Spotify as well for the Non-English Songs, provide a translation so everyone can read the thoughts conveyed via the music.</h3></br>
+<p>Music is the language without barriers, in recent years, we are seeing an uptrend of this in the music we listen to, BTS, a Korean boy band is considered a high achiever of having their music play across radio stations globally. Back in 2002, Macarena was charitng as top dance song. Though the songs are great, unless you are native to the language, it is difficult to understand what is the meaning behind the song's lyrics. On the otherside we have English songs, whose lyrics everyone is curious to learn as the artist of the song intended to write. An example of this is SAINt JHN - Roses (Imanbek Remix)</br></br>Lyrify will help bridge that gap by display the lyrics for every song searched via Spotify as well for the Non-English Songs, provide a translation so everyone can read the thoughts conveyed via the music.</p></br>
 
 # Key Features
 
@@ -27,9 +28,10 @@
 
 # How To Install
 
-<p>To Run the Program on the Client Side <strong>Please ensure <a href='https://github.com/azmanosis/lyrify-capstone-api' target="_blank" rel="noreferrer">Server Side</a> is set up and running</strong> then follow the instructions below:</p>
+To Run the Program on the Client Side <strong>Please ensure [Server Side](https://github.com/azmanosis/lyrify-capstone-api) is set up and running</strong> then follow the instructions below:
 
-<p> Open an IDE program, preferable VS Code.</br>Under <span style="color:#50646a">Terminal</span> in <span style="color:#50646a">VS Code</span> select <span style="color:#50646a">New Terminal</span>
+Open an IDE program, preferable VS Code.</br>Under <font color="#50646a">Terminal</font> in <font color="#50646a">VS Code</font> select <font color="#50646a">New Terminal</font>
+
 <ul>
     <span style="color:grey"># Clone this repository</span>
 <li> $ git clone https://github.com/azmanosis/lyrify-capstone.git</li>
