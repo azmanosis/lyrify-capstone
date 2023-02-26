@@ -30,20 +30,18 @@
 
 To Run the Program on the Client Side <strong>Please ensure [Server Side](https://github.com/azmanosis/lyrify-capstone-api) is set up and running</strong> then follow the instructions below:
 
-Open an IDE program, preferable VS Code.</br>Under <font color="#50646a">Terminal</font> in <font color="#50646a">VS Code</font> select <font color="#50646a">New Terminal</font>
+Open an IDE program, preferable VS Code.</br>Under `Terminal` in `VS Code` select `New Terminal`
 
-<ul>
-    <span style="color:grey"># Clone this repository</span>
-<li> $ git clone https://github.com/azmanosis/lyrify-capstone.git</li>
-    <span style="color:grey"># Go into the folder</span>
-<li> $ cd lyrify-capstone</li>
-    <span style="color:grey"># Install dependencies</span>
-<li> $ npm install</li>
-    <span style="color:grey"> # Run the app</span>
-<li> $ npm start</li>
-</ul>
-
-</p>
+```bash
+# Clone this repository
+$ git clone https://github.com/azmanosis/lyrify-capstone.git
+# Go into the folder
+$ cd lyrify-capstone
+# Install dependencies
+$ npm install
+# Run the app
+$ npm start</li>
+```
 
 <p>Open <a href="http://localhost:3000">http://localhost:3000</a> in a browser to view the app</p></br>
 
