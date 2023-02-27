@@ -1,0 +1,464 @@
+@use "../../styles/partials/index" as *;
+
+body {
+  display: flex;
+  background-color: $darkblue;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  margin: 0.5rem 0 1rem 1rem;
+  text-decoration: none;
+
+  &:hover {
+    color: $fadedolive;
+    text-decoration: none;
+  }
+
+  @include tablet {
+    margin: 1rem 0 1rem 1rem;
+  }
+
+  #triangleLogo {
+    height: 1rem;
+
+    @include desktop {
+      height: 1.5rem;
+    }
+  }
+
+  &__logo {
+    margin: 0;
+    width: 1rem; //67,982px
+    height: 1rem;
+
+    @include tablet {
+      width: 1.5rem;
+    }
+
+    @include desktop {
+      width: 3rem;
+    }
+
+    #rightPath {
+      animation: 4.1s ease-in-out infinite alternate running rightPath;
+    }
+
+    @keyframes rightPath {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0.5;
+      }
+    }
+
+    #bottomPath {
+      animation: 1.1s ease-in-out infinite alternate running bottomPath;
+    }
+
+    @keyframes bottomPath {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0.5;
+      }
+    }
+
+    #leftPath {
+      animation: 1s ease-in-out infinite alternate running leftPath;
+    }
+
+    @keyframes leftPath {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__text {
+    color: $olive;
+    background-color: $darkblue;
+    margin: 0 0 0 0.5rem;
+    letter-spacing: 0.15rem;
+    font-size: 1rem;
+
+    @include tablet {
+      letter-spacing: 0.25rem;
+    }
+
+    @include desktop {
+      font-size: 1.7rem;
+    }
+  }
+}
+
+.dashboard {
+  background-color: $darkblue;
+
+  &__container {
+    margin: 0 0.25rem 0 0.25rem;
+
+    &--search {
+      display: flex;
+      justify-content: center;
+      border: solid 0.25rem $white;
+      border-radius: 0.25rem;
+      font-family: amedium;
+      margin: 0 1.5rem 0 1.5rem;
+
+      @include tablet {
+        margin: 0 1.5rem 0 25rem;
+      }
+
+      @include nesthub {
+        margin: 0 1.5rem 0 45rem;
+      }
+
+      @include desktop {
+        margin: 0 1.5rem 0 60rem;
+      }
+
+      @include highest {
+        margin: 0 12rem 0 85rem;
+        border-radius: 0.5rem;
+      }
+
+      &--input {
+        border: none;
+        height: 3rem;
+        width: 12.5rem;
+        background-color: $darkblue;
+        text-align: center;
+        color: $olive;
+        outline: none;
+        @include nomargin_nopadding;
+        font-weight: bold;
+
+        &::placeholder {
+          text-align: center;
+          color: $fadedblue;
+          font-weight: normal;
+        }
+
+        @include tablet {
+          width: 17rem;
+        }
+
+        @include desktop {
+          width: 14rem;
+        }
+
+        @include highest {
+          width: 15rem;
+        }
+      }
+
+      &--microphonebox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0 1rem 0 1rem;
+        background-color: $darkblue;
+        border: none;
+        cursor: nw-resize;
+        // cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='15.19' viewBox='0 0 20 15.19'%3E%3Cdefs%3E%3Cstyle%3E .cls-1, .cls-2, .cls-3 %7B fill: none; stroke: %23fff; stroke-linecap: round; stroke-linejoin: round; %7D .cls-1 %7B stroke-width: 4px; %7D .cls-2 %7B stroke-width: 3px; %7D .cls-3 %7B stroke-width: 2px; %7D %3C/style%3E%3C/defs%3E%3Cg id='voice_recognition' transform='translate(-1166.276 -1194.529)'%3E%3Cpath id='Path_13' data-name='Path 13' class='cls-1' d='M1169,1204.527a17.083,17.083,0,0,1,14.361-8c11.286,0,14.112,8.059,14.112,8.059'/%3E%3Cpath id='Path_14' data-name='Path 14' class='cls-2' d='M1169,1204.527s3.431-8,10.947-8c8.6,0,10.757,8.059,10.757,8.059' transform='translate(3.385 7.34)'/%3E%3Cpath id='Path_15' data-name='Path 15' class='cls-3' d='M1169,1204.527s2.479-8,7.907-8c6.214,0,7.77,8.059,7.77,8.059' transform='translate(6.398 14.435)'/%3E%3C/g%3E%3C/svg%3E")
+        //     16 16,
+        //   pointer;
+
+        &--microphoneimage {
+          height: 1.5rem;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+
+    &--output {
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0 0 0;
+
+      @include tablet {
+        margin: 1rem 1.5rem 0 25rem;
+      }
+
+      @include desktop {
+        margin: 1rem 1.5rem 0 60rem;
+      }
+
+      @include highest {
+        margin: 0 12rem 0 85rem;
+      }
+
+      &--results {
+        background-color: $darkblue;
+        margin: 0 0 0 1rem;
+        width: 15rem;
+        height: 15rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5%;
+        overflow-x: scroll;
+        // z-index: 1;
+
+        @include tablet {
+          margin: 0;
+          padding: 0 1rem 0 1rem;
+          width: 17rem;
+        }
+
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+
+        &::-webkit-scrollbar-corner {
+          background-color: $darkblue;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: $olive;
+        }
+      }
+    }
+  }
+
+  &__player {
+    margin: 2rem 1rem 1rem 1rem;
+    width: 90%;
+
+    @include tablet {
+      position: relative;
+      bottom: 21.5rem;
+      width: 45%;
+      margin-bottom: -20rem;
+    }
+
+    @include desktop {
+      width: 60%;
+      margin: 2rem 1rem -20rem 2rem;
+    }
+
+    @include highest {
+      width: 40%;
+      bottom: 20.5rem;
+      margin: 2rem 1rem -18rem 12rem;
+    }
+  }
+}
+
+.line {
+  background-color: $white;
+  width: 100%;
+  height: 0.5rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.displaylyrics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0 0 0;
+
+  &__empty {
+    height: 1px;
+  }
+
+  &__centered {
+    display: flex;
+    justify-content: center;
+
+    &--lyricsen {
+      padding: 1rem 0 1rem 0;
+      overflow-x: scroll;
+      height: 25vh;
+      font-size: 0.65rem;
+      line-height: 3rem;
+      white-space: pre-line;
+      text-align: center;
+      color: $olive;
+      mask-image: linear-gradient(
+        to bottom,
+        $darkblue calc(100% - 3rem),
+        transparent 100%
+      );
+
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      &::-webkit-scrollbar-corner {
+        background-color: $darkblue;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $olive;
+      }
+
+      @include tablet {
+        height: 40vh;
+        font-size: 2rem;
+        line-height: 6rem;
+        padding: 0 0 10rem 0;
+        mask-image: linear-gradient(
+          to bottom,
+          $darkblue calc(100% - 7rem),
+          transparent 100%
+        );
+      }
+
+      @include desktop {
+        height: 60vh;
+      }
+    }
+
+    &--lyricstran {
+      position: relative;
+      top: 1.2rem;
+      margin-bottom: -13rem;
+      padding: 1rem 0 1rem 0;
+      overflow-x: scroll;
+      height: 25vh;
+      font-size: 0.55rem;
+      line-height: 3rem;
+      white-space: pre-wrap;
+      text-align: center;
+      color: $fadedolive;
+      text-transform: capitalize;
+      mask-image: linear-gradient(
+        to bottom,
+        $darkblue calc(100% - 3rem),
+        transparent 100%
+      );
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &::-webkit-scrollbar-corner {
+        background-color: $darkblue;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $olive;
+      }
+
+      @include tablet {
+        height: 40vh;
+        top: 3rem;
+        font-size: 1.2rem;
+        line-height: 6rem;
+        padding: 0 2rem 10rem 2rem;
+        mask-image: linear-gradient(
+          to bottom,
+          $darkblue calc(100% - 7rem),
+          transparent 100%
+        );
+      }
+
+      @include desktop {
+        height: 60vh;
+        top: 3rem;
+      }
+    }
+
+    &--original {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 1rem 0 1rem 0;
+
+      &--a {
+        width: 90%;
+
+        @include tablet {
+          margin: 0 5rem;
+        }
+
+        &--b {
+          overflow-x: scroll;
+          height: 25vh;
+          font-size: 1rem;
+          line-height: 1.5rem;
+          white-space: pre-line;
+          text-align: center;
+          color: $olive;
+          padding: 0 0 10rem 0;
+          mask-image: linear-gradient(
+            to bottom,
+            $darkblue calc(100% - 10rem),
+            transparent 100%
+          );
+
+          &::-webkit-scrollbar {
+            width: 5px;
+          }
+
+          &::-webkit-scrollbar-corner {
+            background-color: $darkblue;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: $olive;
+          }
+
+          @include tablet {
+            height: 40vh;
+            line-height: 4rem;
+            font-size: 2rem;
+          }
+
+          @include desktop {
+            height: 60vh;
+          }
+        }
+      }
+    }
+
+    &--buttona {
+      margin: 0.5rem 0 0 0;
+      border: solid 1px $white;
+      font-family: amedium;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      color: $fadedblue;
+      background-color: $darkblue;
+      cursor: alias;
+
+      // @include tablet {
+      //   margin: 65vh 0 0 0;
+      // }
+    }
+
+    &--buttonb {
+      margin: 1.5rem 0 0 0;
+      border: solid 1px $white;
+      font-family: amedium;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      color: $fadedblue;
+      background-color: $darkblue;
+      cursor: alias;
+
+      @include tablet {
+        // position: absolute;
+        // bottom: 5%;
+        // align-items: center;
+        // @include nomargin_nopadding;
+        margin: 4rem 0 0 0;
+        // margin: 65vh 0 0 0;
+      }
+
+      @include desktop {
+        margin: 2rem 0 0 0;
+      }
+    }
+  }
+}

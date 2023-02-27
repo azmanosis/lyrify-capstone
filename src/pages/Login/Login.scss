@@ -1,0 +1,76 @@
+@use "../../styles/partials/index" as *;
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 97vh;
+
+  &__header {
+    margin: 0 2rem 2rem 2rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    #triangleLogo {
+      height: 5rem;
+    }
+
+    #rightPath {
+      animation: 4.1s ease-in-out infinite alternate running rightPath;
+    }
+
+    @keyframes rightPath {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0.5;
+      }
+    }
+
+    #bottomPath {
+      animation: 1.1s ease-in-out infinite alternate running bottomPath;
+    }
+
+    @keyframes bottomPath {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0.5;
+      }
+    }
+
+    #leftPath {
+      animation: 1s ease-in-out infinite alternate running leftPath;
+    }
+
+    @keyframes leftPath {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__spotify {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $darkblue;
+
+    &--url {
+      color: $white;
+      text-decoration: none;
+
+      &:hover {
+        color: $olive;
+      }
+    }
+  }
+}
