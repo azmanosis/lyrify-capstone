@@ -47,7 +47,7 @@ $ npm start
 
 # Tech Dependencies
 
-<h4> Installed via <a href="#Install-dependencies" style="color:grey; text-decoration:none;">npm install</a> in previous step</h4></br>
+Installed via `npm install` in previous step</br>
 
 <a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png" height="30"/></a>
 <a href="https://reactrouter.com/en/main" target="_blank" rel="noreferrer"><img src="https://reactrouter.com/_brand/react-router-color.png" height="30"/></a>
