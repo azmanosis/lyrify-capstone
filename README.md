@@ -56,7 +56,10 @@ Installed via `npm install` in previous step</br>
 
 # Demo
 
-![lyrify-demo](./src/assets/gif/lyrify_demo.gif)
+<p align='center'>
+    <img align='center' src='./src/assets/gif/lyrify_demo.gif' width='450'/>
+</p>
+</br>
 
 # Credits:
 
