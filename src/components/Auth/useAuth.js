@@ -16,9 +16,6 @@ function useAuth(code) {
             setExpiresIn(res.data.expiresIn)
             window.history.pushState({}, null, '/lyrify')
         })
-        // .catch(() => {
-        //     window.location = '/'
-        // })
     }, [code])
 
     useEffect(() => {
