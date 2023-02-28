@@ -141,15 +141,6 @@ function Dashboard({ code }) {
     }
 
 
-    // const handleInputChange = (e) => {
-    //     setSearch(e.target.value)
-    //     if (e.target.value === "") {
-    //         setShowContainer(true);
-    //     } else {
-    //         setShowContainer(false);
-    //     }
-    // }
-
     return (
         <>
             <div>
@@ -167,7 +158,6 @@ function Dashboard({ code }) {
                             placeholder="Search Songs/Artists"
                             value={search}
                             onChange=
-                            // {handleInputChange}
                             {(e) => setSearch(e.target.value)}
                             src={microPhoneIcon} />
                         <button
@@ -181,13 +171,11 @@ function Dashboard({ code }) {
                         </button>
                     </div>
                     <div className="dashboard__container--output">
-                        {/* {showContainer && */}
                         <div
                             className="dashboard__container--output--results">
                             {searchResults.map(track => (<Search track={track} key={track.uri} chooseTrack={chooseTrack} />
                             ))}
                         </div>
-                        {/* } */}
                     </div>
                 </div>
                 <div className="dashboard__player">

@@ -18,14 +18,14 @@ function Player({ accessToken, trackUri }) {
             play={play}
             uris={trackUri ? [trackUri] : []}
             styles={{
-                activeColor: "#252e31", //unknown
-                altColor: "#252e31", //unknown
+                activeColor: "#252e31",
+                altColor: "#252e31",
                 bgColor: "#252e31", //Background color
                 color: "#aab182", // icon colors
-                errorColor: "#252e31", // unknown
+                errorColor: "#252e31",
                 height: 50, //album art made bigger
-                loaderColor: "#252e31", //unknown
-                loaderSize: 100, //unknown
+                loaderColor: "#252e31",
+                loaderSize: 100,
                 sliderColor: "#b0b886", //slider complete track color
                 sliderHandleBorderRadius: 100,
                 sliderHandleColor: "#252e31", // slider seeker
