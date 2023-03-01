@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+const backend = `https://lyrify-api.up.railway.app`
+
 function useAuth(code) {
     const [accessToken, setAccessToken] = useState();
     const [refreshToken, setRefreshToken] = useState();
     const [expiresIn, setExpiresIn] = useState();
 
     useEffect(() => {
-        axios.post('https://lyrify-api.up.railway.app/login', {
+        axios.post(`${backend}/login`, {
             code,
         }).then(res => {
             console.log(res.data)
@@ -21,7 +23,7 @@ function useAuth(code) {
     useEffect(() => {
         if (!refreshToken || !expiresIn) return
         const interval = setInterval(() => {
-            axios.post('https://lyrify-api.up.railway.app/refresh', {
+            axios.post(`${backend}/refresh`, {
                 refreshToken,
             }).then(res => {
                 console.log(res.data)
