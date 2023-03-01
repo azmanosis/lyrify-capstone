@@ -168,15 +168,20 @@ body {
         padding: 0 1rem 0 1rem;
         background-color: $darkblue;
         border: none;
-        // cursor: nw-resize;
-        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='15.19' viewBox='0 0 20 15.19'%3E%3Cdefs%3E%3Cstyle%3E .cls-1, .cls-2, .cls-3 %7B fill: none; stroke: %23fff; stroke-linecap: round; stroke-linejoin: round; %7D .cls-1 %7B stroke-width: 4px; %7D .cls-2 %7B stroke-width: 3px; %7D .cls-3 %7B stroke-width: 2px; %7D %3C/style%3E%3C/defs%3E%3Cg id='voice_recognition' transform='translate(-1166.276 -1194.529)'%3E%3Cpath id='Path_13' data-name='Path 13' class='cls-1' d='M1169,1204.527a17.083,17.083,0,0,1,14.361-8c11.286,0,14.112,8.059,14.112,8.059'/%3E%3Cpath id='Path_14' data-name='Path 14' class='cls-2' d='M1169,1204.527s3.431-8,10.947-8c8.6,0,10.757,8.059,10.757,8.059' transform='translate(3.385 7.34)'/%3E%3Cpath id='Path_15' data-name='Path 15' class='cls-3' d='M1169,1204.527s2.479-8,7.907-8c6.214,0,7.77,8.059,7.77,8.059' transform='translate(6.398 14.435)'/%3E%3C/g%3E%3C/svg%3E")
-            16 16,
-          pointer;
+        cursor: none;
+        // cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='15.19' viewBox='0 0 20 15.19'%3E%3Cdefs%3E%3Cstyle%3E .cls-1, .cls-2, .cls-3 %7B fill: none; stroke: %23fff; stroke-linecap: round; stroke-linejoin: round; %7D .cls-1 %7B stroke-width: 4px; %7D .cls-2 %7B stroke-width: 3px; %7D .cls-3 %7B stroke-width: 2px; %7D %3C/style%3E%3C/defs%3E%3Cg id='voice_recognition' transform='translate(-1166.276 -1194.529)'%3E%3Cpath id='Path_13' data-name='Path 13' class='cls-1' d='M1169,1204.527a17.083,17.083,0,0,1,14.361-8c11.286,0,14.112,8.059,14.112,8.059'/%3E%3Cpath id='Path_14' data-name='Path 14' class='cls-2' d='M1169,1204.527s3.431-8,10.947-8c8.6,0,10.757,8.059,10.757,8.059' transform='translate(3.385 7.34)'/%3E%3Cpath id='Path_15' data-name='Path 15' class='cls-3' d='M1169,1204.527s2.479-8,7.907-8c6.214,0,7.77,8.059,7.77,8.059' transform='translate(6.398 14.435)'/%3E%3C/g%3E%3C/svg%3E")
+        //     16 16,
+        //   pointer;
 
         &--microphoneimage {
           height: 1.5rem;
           margin: 0;
           padding: 0;
+
+          &:hover {
+            background-image: url(../../assets/icons/microphone-speaker.svg);
+            height: 1.6rem;
+          }
         }
       }
     }

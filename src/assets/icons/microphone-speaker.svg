@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="65.985" height="110.902" viewBox="0 0 65.985 110.902">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #aab182;
+        stroke: #aab182;
+        stroke-width: 5px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-2 {
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        stroke-width: 4px;
+      }
+    </style>
+  </defs>
+  <g id="Microphone" transform="translate(-713.425 -1287.598)">
+    <path id="Path_1" data-name="Path 1" class="cls-1" d="M164.585,51.306a15.312,15.312,0,0,0,15.285-15.285V15.285a15.285,15.285,0,0,0-30.571,0V36.021A15.3,15.3,0,0,0,164.585,51.306ZM153.193,15.285a11.393,11.393,0,0,1,22.785,0V36.021a11.393,11.393,0,0,1-22.785,0Z" transform="translate(582.378 1313)"/>
+    <path id="Path_2" data-name="Path 2" class="cls-1" d="M80.054,214.5a1.953,1.953,0,0,0-1.954,1.954c0,13.649,14.6,24.882,28.009,25.868v12.187H95.955a1.954,1.954,0,1,0,0,3.909h24.2a1.954,1.954,0,0,0,0-3.909H110V242.322c13.41-1,28.009-12.219,28.009-25.868a1.954,1.954,0,0,0-3.909,0c0,12.171-13.9,22.07-26.07,22.07s-26.07-9.9-26.07-22.07A1.893,1.893,0,0,0,80.054,214.5Z" transform="translate(638.9 1137.582)"/>
+    <path id="Path_17" data-name="Path 17" class="cls-2" d="M1169,1204.527s5.312-8,16.948-8c13.319,0,16.654,8.059,16.654,8.059" transform="translate(-731.568 479.552) rotate(-16)"/>
+    <path id="Path_16" data-name="Path 16" class="cls-3" d="M1169,1204.527s6.382-8,20.362-8c16,0,20.01,8.059,20.01,8.059" transform="translate(-736.845 473.43) rotate(-16)"/>
+  </g>
+</svg>
