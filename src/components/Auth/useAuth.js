@@ -7,7 +7,7 @@ function useAuth(code) {
     const [expiresIn, setExpiresIn] = useState();
 
     useEffect(() => {
-        axios.post('http://localhost:8080/login', {
+        axios.post('https://lyrify-api.up.railway.app/login', {
             code,
         }).then(res => {
             console.log(res.data)
@@ -21,7 +21,7 @@ function useAuth(code) {
     useEffect(() => {
         if (!refreshToken || !expiresIn) return
         const interval = setInterval(() => {
-            axios.post('http://localhost:8080/refresh', {
+            axios.post('https://lyrify-api.up.railway.app/refresh', {
                 refreshToken,
             }).then(res => {
                 console.log(res.data)

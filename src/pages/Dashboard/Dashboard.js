@@ -40,7 +40,7 @@ function Dashboard({ code }) {
     useEffect(() => {
         if (!playingTrack) return
 
-        axios.get('http://localhost:8080/lyrics', {
+        axios.get('https://lyrify-api.up.railway.app/lyrics', {
             params: {
                 track: playingTrack.title,
                 artist: playingTrack.artist
