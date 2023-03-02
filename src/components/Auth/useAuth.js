@@ -12,7 +12,6 @@ function useAuth(code) {
         axios.post(`${backend}/login`, {
             code,
         }).then(res => {
-            console.log(res.data)
             setAccessToken(res.data.accessToken)
             setRefreshToken(res.data.refreshToken)
             setExpiresIn(res.data.expiresIn)
@@ -26,7 +25,6 @@ function useAuth(code) {
             axios.post(`${backend}/refresh`, {
                 refreshToken,
             }).then(res => {
-                console.log(res.data)
                 setAccessToken(res.data.accessToken)
                 setExpiresIn(res.data.expiresIn)
             })
