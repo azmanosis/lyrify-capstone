@@ -14,6 +14,7 @@ const spotifyApi = new SpotifyWebApi({
 })
 
 const backend = `https://lyrify-api.up.railway.app`
+// const backend = `http://localhost:8080`
 
 function Dashboard({ code }) {
     const accessToken = useAuth(code)
