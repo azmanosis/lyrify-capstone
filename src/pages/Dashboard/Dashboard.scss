@@ -236,10 +236,11 @@ body {
   }
 
   &__player {
-    margin: 2rem 1rem 1rem 1rem;
+    margin: 0 1rem 0.5rem 1rem;
     width: 90%;
 
     @include tablet {
+      margin: 2rem 1rem 1rem 1rem;
       position: relative;
       bottom: 21.5rem;
       width: 45%;
@@ -270,7 +271,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem 0 0 0;
+  margin: 0.5rem 0 0 0;
+
+  @include tablet {
+    margin: 2rem 0 0 0;
+  }
 
   &__empty {
     height: 1px;
@@ -281,10 +286,10 @@ body {
     justify-content: center;
 
     &--lyricsen {
-      padding: 1rem 0 1rem 0;
+      padding: 0 0 1rem 0;
       overflow-x: scroll;
-      height: 25vh;
-      font-size: 0.65rem;
+      height: 35vh;
+      font-size: 14px;
       line-height: 3rem;
       white-space: pre-line;
       text-align: center;
@@ -304,7 +309,7 @@ body {
       }
 
       &::-webkit-scrollbar-thumb {
-        background-color: $olive;
+        display: none;
       }
 
       @include tablet {
@@ -328,10 +333,10 @@ body {
       position: relative;
       top: 1.2rem;
       margin-bottom: -13rem;
-      padding: 1rem 0 1rem 0;
+      padding: 0 0 1rem 0;
       overflow-x: scroll;
-      height: 25vh;
-      font-size: 0.55rem;
+      height: 33vh;
+      font-size: 12px;
       line-height: 3rem;
       white-space: pre-wrap;
       text-align: center;
@@ -352,7 +357,7 @@ body {
       }
 
       &::-webkit-scrollbar-thumb {
-        background-color: $olive;
+        display: none;
       }
 
       @include tablet {
@@ -378,7 +383,11 @@ body {
       display: flex;
       align-items: center;
       flex-direction: column;
-      padding: 1rem 0 1rem 0;
+      padding: 0.5rem 0 1rem 0;
+
+      @include tablet {
+        padding: 1rem 0 1rem 0;
+      }
 
       &--a {
         width: 90%;
@@ -389,7 +398,7 @@ body {
 
         &--b {
           overflow-x: scroll;
-          height: 25vh;
+          height: 28vh;
           font-size: 1rem;
           line-height: 1.5rem;
           white-space: pre-line;
@@ -411,7 +420,7 @@ body {
           }
 
           &::-webkit-scrollbar-thumb {
-            background-color: $olive;
+            display: none;
           }
 
           @include tablet {
@@ -431,18 +440,22 @@ body {
       margin: 0.5rem 0 0 0;
       border: solid 1px $white;
       font-family: amedium;
-      padding: 0.5rem;
+      padding: 0.25rem;
       border-radius: 0.25rem;
       color: $fadedblue;
       background-color: $darkblue;
       cursor: alias;
+
+      @include tablet {
+        padding: 0.5rem;
+      }
     }
 
     &--buttonb {
-      margin: 1.5rem 0 0 0;
+      margin: 0;
       border: solid 1px $white;
       font-family: amedium;
-      padding: 0.5rem;
+      padding: 0.25rem;
       border-radius: 0.25rem;
       color: $fadedblue;
       background-color: $darkblue;
@@ -450,6 +463,7 @@ body {
 
       @include tablet {
         margin: 4rem 0 0 0;
+        padding: 0.5rem;
       }
 
       @include desktop {
