@@ -294,6 +294,7 @@ body {
       white-space: pre-line;
       text-align: center;
       color: $olive;
+      text-transform: lowercase;
       mask-image: linear-gradient(
         to bottom,
         $darkblue calc(100% - 3rem),
@@ -341,7 +342,7 @@ body {
       white-space: pre-wrap;
       text-align: center;
       color: $fadedolive;
-      text-transform: capitalize;
+      text-transform: lowercase;
       mask-image: linear-gradient(
         to bottom,
         $darkblue calc(100% - 3rem),
@@ -403,6 +404,7 @@ body {
           line-height: 1.5rem;
           white-space: pre-line;
           text-align: center;
+          text-transform: lowercase;
           color: $olive;
           padding: 0 0 10rem 0;
           mask-image: linear-gradient(
@@ -444,6 +446,7 @@ body {
       border-radius: 0.25rem;
       color: $fadedblue;
       background-color: $darkblue;
+      text-transform: lowercase;
       cursor: alias;
 
       @include tablet {
@@ -459,6 +462,7 @@ body {
       border-radius: 0.25rem;
       color: $fadedblue;
       background-color: $darkblue;
+      text-transform: lowercase;
       cursor: alias;
 
       @include tablet {
