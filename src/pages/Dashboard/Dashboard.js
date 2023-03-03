@@ -13,6 +13,8 @@ const spotifyApi = new SpotifyWebApi({
     clientId: "b7a11319b71d4c9fb5ea10737cace61f"
 })
 
+const backend = `http://localhost:8080`;
+
 function Dashboard({ code }) {
     const accessToken = useAuth(code)
     const [search, setSearch] = useState('')
@@ -40,7 +42,7 @@ function Dashboard({ code }) {
     useEffect(() => {
         if (!playingTrack) return
 
-        axios.get('http://localhost:8080/lyrics', {
+        axios.get(`${backend}/lyrics`, {
             params: {
                 track: playingTrack.title,
                 artist: playingTrack.artist
