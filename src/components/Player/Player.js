@@ -9,7 +9,7 @@ function Player({ accessToken, trackUri }) {
     if (!accessToken) return null
     return (
         <SpotifyPlayer
-            initialVolume={10}
+            initialVolume={50}
             token={accessToken}
             showSaveIcon={true}
             callback={state => {
