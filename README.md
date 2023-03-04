@@ -54,6 +54,8 @@ Installed via `npm install` in previous step</br>
 <a href="https://axios-http.com/docs/intro" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/axios/axios/v1.x/test/unit/adapters/axios.png" height="30"/></a>
 <a href="https://sass-lang.com/" target="_blank" rel="noreferrer"><img src="https://logos-download.com/wp-content/uploads/2016/09/Sass_logo.png" height="30"/></a></br>
 
+<p>spotify web playback, spotify-web-api</p>
+
 # Demo
 
 <p align='center'>
