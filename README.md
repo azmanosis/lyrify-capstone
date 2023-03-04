@@ -59,7 +59,7 @@ Installed via `npm install` in previous step</br>
 # Demo
 
 <p align='center'>
-    <img align='center' src='./src/assets/gif/lyrify_demo.gif' width='450'/>
+    <img align='center' src='./src/assets/gif/lyrify_demo.gif' width='600'/>
 </p>
 </br>
 
