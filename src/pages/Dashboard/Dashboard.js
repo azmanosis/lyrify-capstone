@@ -228,7 +228,7 @@ function Dashboard({ code }) {
                                 <div className="displaylyrics__centered--original--a">
                                     {searchResults.length === 0 && (
                                         <div className='displaylyrics__centered--original--a--b'>
-                                            {translation ? translation : "Okay so here is the thing, your search was too unique or this is an English song"}
+                                            {translation ? translation : "sorry, either your search is too unique or this is an English song"}
                                         </div>
                                     )}
                                 </div>
