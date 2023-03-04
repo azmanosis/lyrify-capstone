@@ -2,7 +2,9 @@ import './Login.scss';
 import React from 'react';
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
 
-const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=b7a11319b71d4c9fb5ea10737cace61f&response_type=code&redirect_uri=http://localhost:3000/lyrify&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state`;
+const frontend = `http://localhost:3000/lyrify`
+
+const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=b7a11319b71d4c9fb5ea10737cace61f&response_type=code&redirect_uri=${frontend}&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state`;
 
 function Login() {
     return (

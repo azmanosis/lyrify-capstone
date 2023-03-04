@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+const backend = `http://localhost:8080`;
+
 function useAuth(code) {
     const [accessToken, setAccessToken] = useState();
     const [refreshToken, setRefreshToken] = useState();
     const [expiresIn, setExpiresIn] = useState();
 
     useEffect(() => {
-        axios.post('http://localhost:8080/login', {
+        axios.post(`${backend}/login`, {
             code,
         }).then(res => {
-            console.log(res.data)
             setAccessToken(res.data.accessToken)
             setRefreshToken(res.data.refreshToken)
             setExpiresIn(res.data.expiresIn)
@@ -21,10 +22,9 @@ function useAuth(code) {
     useEffect(() => {
         if (!refreshToken || !expiresIn) return
         const interval = setInterval(() => {
-            axios.post('http://localhost:8080/refresh', {
+            axios.post(`${backend}/refresh`, {
                 refreshToken,
             }).then(res => {
-                console.log(res.data)
                 setAccessToken(res.data.accessToken)
                 setExpiresIn(res.data.expiresIn)
             })
